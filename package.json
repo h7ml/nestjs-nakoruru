@@ -17,7 +17,7 @@
   ],
   "homepage": "https:/nestjs-nakoruru.h7ml.cn",
   "scripts": {
-    "build": "nest build --webpack --webpackPath=./webpack.config.js",
+    "build": "nest build && node script/copy-swagger-files.ts",
     "format": "prettier --write .",
     "start": "nest start",
     "start:dev": "nest start --watch",
