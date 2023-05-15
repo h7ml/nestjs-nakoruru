@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
+import { BilibiliService } from './bilibili.service';
 import { BilibiliController } from './bilibili.controller';
 
 @Module({
-  controllers: [BilibiliController]
+  providers: [BilibiliService],
+  controllers: [BilibiliController],
 })
-export class BilibiliModule {}
+export class BilibiliModule { }
