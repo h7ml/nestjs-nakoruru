@@ -30,7 +30,7 @@ const copyDirRecursive = async (srcDir, destDir) => {
   }
 };
 
-const srcDir = path.join(__dirname, '..', 'node_modules/swagger-ui-dist');
-const destDir = path.join(__dirname, '..', 'dist/swagger');
+const srcDir = path.join(__dirname, '../../', 'node_modules/swagger-ui-dist');
+const destDir = path.join(__dirname, '../../', 'dist/swagger');
 
 copyDirRecursive(srcDir, destDir);
