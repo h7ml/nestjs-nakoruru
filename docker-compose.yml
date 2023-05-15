@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nestjs-nakoruru:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/nestjs-nakoruru
+    ports:
+      - '80:80'

@@ -1,0 +1,12 @@
+*node_modules
+npm-debug.log
+.git
+README.md
+.idea
+*.memory-card.json
+*.idea
+*.vscode
+*.iml
+*.DS_Store
+.idea/
+node_modules/
