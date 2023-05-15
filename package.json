@@ -17,7 +17,7 @@
   ],
   "homepage": "https:/nestjs-nakoruru.h7ml.cn",
   "scripts": {
-    "build": "nest build",
+    "build": "nest build --webpack --webpackPath=./webpack.config.js",
     "format": "prettier --write .",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -32,6 +32,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fastify/static": "^6.10.1",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
@@ -39,11 +40,16 @@
     "@nestjs/serve-static": "^3.0.1",
     "@nestjs/swagger": "^6.3.0",
     "axios": "^1.4.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "ejs": "^3.1.9",
     "node-fetch": "^3.3.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
-    "swagger-ui-express": "^4.6.3"
+    "swagger-ui-dist": "5.0.0-alpha.4",
+    "swagger-ui-express": "^4.6.3",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   },
   "devDependencies": {
     "@femm/prettier": "^1.0.2",
