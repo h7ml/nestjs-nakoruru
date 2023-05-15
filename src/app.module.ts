@@ -4,6 +4,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { ConfigModule } from '@nestjs/config';
 
 import { join } from 'path';
+import { JuejinModule } from './juejin/juejin.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -12,6 +13,7 @@ import { join } from 'path';
       exclude: ['/api*'],
     }),
     GirlModule,
+    JuejinModule,
   ],
   controllers: [],
   providers: [],
