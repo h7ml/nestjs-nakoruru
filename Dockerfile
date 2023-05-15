@@ -7,7 +7,6 @@ WORKDIR /nestjs-nakoruru
 # 将 package.json、pnpm-lock.yaml 和 .npmrc 复制到工作目录
 COPY package*.json ./
 COPY pnpm-lock.yaml ./
-COPY .npmrc ./
 
 # 安装依赖包
 RUN npm install -g pnpm increase-memory-limit --no-cache

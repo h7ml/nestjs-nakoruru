@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 
 import { join } from 'path';
 import { JuejinModule } from './juejin/juejin.module';
+import { Kr36Module } from './kr36/kr36.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -14,6 +15,7 @@ import { JuejinModule } from './juejin/juejin.module';
     }),
     GirlModule,
     JuejinModule,
+    Kr36Module,
   ],
   controllers: [],
   providers: [],
