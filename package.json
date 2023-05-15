@@ -1,7 +1,7 @@
 {
   "name": "nestjs-nakoruru",
   "version": "0.0.1",
-  "description": "Nakoruru is a React Admin project that utilizes Antd and React 18 to provide a user-friendly and efficient interface for managing data. The project also makes use of Recoil for state management, allowing for a more streamlined and organized codebase. With Nakoruru, users can easily view, create, update, and delete data, all within a sleek and modern user interface. The project is highly customizable and can be easily adapted to suit individual needs, making it an excellent choice for businesses and organizations of all sizes. Whether you're managing a small team or a large enterprise, Nakoruru can help simplify and streamline your data management processes.",
+  "description": "Nakoruru Backend is a robust and efficient microservices-based backend system powered by Nest.js and Node.js. It provides a reliable, scalable, and secure foundation for the Nakoruru React Admin project. This backend system adopts modern design patterns and industry best practices to ensure optimal performance, stability, and maintainability. It effectively handles requests, processes data, and communicates with databases, enabling comprehensive data management capabilities for the Nakoruru platform. With the integration of Nest.js, an extensible, versatile, and scriptable backend framework, Nakoruru Backend empowers businesses to build high-performing, user-centric applications. This system seamlessly matches the needs of businesses and organizations of all sizes, providing an all-rounded backend solution that powers the Nakoruru platform.",
   "author": {
     "name": "h7ml",
     "mail": "h7ml@qq.com",
@@ -33,8 +33,11 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
-    "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/platform-express": "^9.4.0",
+    "@nestjs/serve-static": "^3.0.1",
+    "ejs": "^3.1.9",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },

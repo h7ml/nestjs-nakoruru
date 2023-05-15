@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nestjs Nakoruru Backend</title>
+    <meta
+      name="description"
+      content="Nakoruru Backend is a robust and efficient microservices-based backend system powered by Nest.js and Node.js. It provides a reliable, scalable, and secure foundation for the Nakoruru React Admin project."
+    />
+    <meta name="author" content="h7ml" />
+    <link rel="canonical" href="https://nestjs-nakoruru.h7ml.cn" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container,
+      header,
+      footer {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      .section {
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        display: none;
+      }
+      .section.active {
+        opacity: 1;
+        transform: translateY(0);
+        display: block;
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        line-height: 1.6;
+        color: #666;
+      }
+      #switchButton {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #switchButton:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Nestjs Nakoruru Backend</h1>
+      <p>By <a href="https://github.com/h7mlnestjs-nakoruru">h7ml</a></p>
+    </header>
+    <main>
+      <div class="container">
+        <button id="switchButton">Switch Language</button>
+        <div class="section active" id="englishVersion">
+          <h1>English Version:</h1>
+          <p>
+            Nakoruru Backend is a robust and efficient microservices-based
+            backend system powered by Nest.js and Node.js. It provides a
+            reliable, scalable, and secure foundation for the Nakoruru React
+            Admin project. This backend system adopts modern design patterns and
+            industry best practices to ensure optimal performance, stability,
+            and maintainability. It effectively handles requests, processes
+            data, and communicates with databases, enabling comprehensive data
+            management capabilities for the Nakoruru platform. With the
+            integration of Nest.js, an extensible, versatile, and scriptable
+            backend framework, Nakoruru Backend empowers businesses to build
+            high-performing, user-centric applications. This system seamlessly
+            matches the needs of businesses and organizations of all sizes,
+            providing an all-rounded backend solution that powers the Nakoruru
+            platform.
+          </p>
+        </div>
+        <div class="section" id="chineseVersion">
+          <h1>中文版本：</h1>
+          <p>
+            Nakoruru后端是一个由Nest.js和Node.js驱动的强大且高效的基于微服务的后端系统，为Nakoruru
+            React
+            Admin项目提供了可靠、可扩展和安全的基础。该后端系统采用了现代设计模式和行业最佳实践，以确保最佳性能、稳定性和可维护性。它有效地处理请求、处理数据和与数据库进行通信，为Nakoruru平台提供了全面的数据管理能力。通过集成Nest.js，一种可扩展、多功能且可编程的后端框架，Nakoruru后端使企业能够构建高性能、以用户为中心的应用。该系统无缝地满足了各种规模的企业和组织的需求，提供了一个全方位的后端解决方案，为Nakoruru平台提供了动力。
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Copyright &copy; 2023 by h7ml. All rights reserved. Licensed under
+        <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a>.
+      </p>
+    </footer>
+    <script>
+      const switchButton = document.getElementById('switchButton');
+      const englishVersion = document.getElementById('englishVersion');
+      const chineseVersion = document.getElementById('chineseVersion');
+
+      switchButton.addEventListener('click', function () {
+        englishVersion.classList.toggle('active');
+        chineseVersion.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
