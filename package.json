@@ -17,7 +17,7 @@
   ],
   "homepage": "https:/nestjs-nakoruru.h7ml.cn",
   "scripts": {
-    "build": "nest build && node src/script/copy-swagger-files.ts",
+    "build": "nest build",
     "format": "prettier --write .",
     "start": "nest start",
     "start:dev": "nest start --watch",
