@@ -1,0 +1,52 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🚀
+        uses: actions/checkout@v3
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Install pnpm 🚀
+        uses: pnpm/action-setup@v2.0.1
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install dependencies 🚀
+        if: steps.pnpm-cache.outputs.cache-hit != 'true'
+        run: pnpm update && pnpm install --no-frozen-lockfile
+
+      - name: Setup Node.js 🚀
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Build project 🚀
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |
+          pnpm run build
+
+      - name: Deploy to Vercel 🚀
+        uses: amondnet/vercel-action@master
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          path: public
