@@ -13,6 +13,7 @@ import { TiebaModule } from './tieba/tieba.module';
 import { ThepaperModule } from './thepaper/thepaper.module';
 import { WeiboModule } from './weibo/weibo.module';
 import { SspaiModule } from './sspai/sspai.module';
+import { NewsqqModule } from './newsqq/newsqq.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -30,6 +31,7 @@ import { SspaiModule } from './sspai/sspai.module';
     ThepaperModule,
     WeiboModule,
     SspaiModule,
+    NewsqqModule,
   ],
   controllers: [],
   providers: [],
