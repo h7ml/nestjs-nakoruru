@@ -3,10 +3,10 @@ import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 import { ThePaperService } from './thepaper.service';
 
-@ApiTags('thepaper')
+@ApiTags('澎湃')
 @Controller()
 export class ThePaperController {
-  constructor(private readonly thePaperService: ThePaperService) { }
+  constructor(private readonly thePaperService: ThePaperService) {}
 
   @Get('/thepaper')
   @ApiOperation({ summary: '获取澎湃热榜' })

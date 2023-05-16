@@ -14,6 +14,7 @@ import { ThepaperModule } from './thepaper/thepaper.module';
 import { WeiboModule } from './weibo/weibo.module';
 import { SspaiModule } from './sspai/sspai.module';
 import { NewsqqModule } from './newsqq/newsqq.module';
+import { ToutiaoModule } from './toutiao/toutiao.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -32,6 +33,7 @@ import { NewsqqModule } from './newsqq/newsqq.module';
     WeiboModule,
     SspaiModule,
     NewsqqModule,
+    ToutiaoModule,
   ],
   controllers: [],
   providers: [],

@@ -8,7 +8,7 @@ interface JuejinResponse {
   };
 }
 
-@ApiTags('juejin')
+@ApiTags('稀土掘金')
 @Controller('juejin')
 export class JuejinController {
   private readonly url =

@@ -2,10 +2,10 @@ import { Controller, Get } from '@nestjs/common';
 import { ZhihuService } from './zhihu.service';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('zhihu')
+@ApiTags('知乎')
 @Controller('zhihu')
 export class ZhihuController {
-  constructor(private readonly zhihuService: ZhihuService) { }
+  constructor(private readonly zhihuService: ZhihuService) {}
 
   @Get()
   @ApiOperation({ summary: '获取知乎热榜' })

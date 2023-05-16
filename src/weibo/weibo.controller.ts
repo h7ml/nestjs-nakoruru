@@ -2,10 +2,10 @@ import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { WeiboService } from './weibo.service';
 
-@ApiTags('weibo')
+@ApiTags('微博')
 @Controller()
 export class WeiboController {
-  constructor(private readonly weiboService: WeiboService) { }
+  constructor(private readonly weiboService: WeiboService) {}
 
   @Get('/weibo')
   @ApiOperation({ summary: '获取微博热搜' })

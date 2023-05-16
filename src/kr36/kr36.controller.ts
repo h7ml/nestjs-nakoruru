@@ -8,7 +8,7 @@ interface KrResponse {
   };
 }
 
-@ApiTags('36kr')
+@ApiTags('36氪')
 @Controller('36kr')
 export class KrController {
   private readonly url =
