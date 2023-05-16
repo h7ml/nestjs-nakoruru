@@ -156,7 +156,7 @@
         </div>
         <p>
           For API details, please visit the
-          <a href="/swagger/">Swagger Documentation</a>.
+          <a href="" id="swaggerLink">Swagger Documentation</a>
         </p>
       </div>
     </main>
@@ -167,6 +167,7 @@
       </p>
     </footer>
     <script>
+      document.getElementById('swaggerLink').href = '/swagger/#' + Date.now();
       const switchButton = document.getElementById('switchButton');
       const englishVersion = document.getElementById('englishVersion');
       const chineseVersion = document.getElementById('chineseVersion');
