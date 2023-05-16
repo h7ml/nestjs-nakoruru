@@ -1,30 +1,29 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import axios from 'axios';
-import { ThePaperService } from './thepaper.service';
+import { WeiboService } from './weibo.service';
 
-@ApiTags('thepaper')
+@ApiTags('weibo')
 @Controller()
-export class ThePaperController {
-  constructor(private readonly thePaperService: ThePaperService) { }
+export class WeiboController {
+  constructor(private readonly weiboService: WeiboService) { }
 
-  @Get('/thepaper')
-  @ApiOperation({ summary: '获取澎湃热榜' })
+  @Get('/weibo')
+  @ApiOperation({ summary: '获取微博热搜' })
   @ApiResponse({ status: 200, description: '获取成功' })
-  async getThePaper() {
+  async getWeibo() {
     try {
-      return await this.thePaperService.getThePaper();
+      return await this.weiboService.getWeibo();
     } catch (error) {
       throw new HttpException('获取失败', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
-  @Get('/thepaper/new')
-  @ApiOperation({ summary: '获取澎湃热榜 - 最新数据' })
+  @Get('/weibo/new')
+  @ApiOperation({ summary: '获取微博热搜 - 最新数据' })
   @ApiResponse({ status: 200, description: '获取成功' })
-  async getNewThePaper() {
+  async getNewWeibo() {
     try {
-      return await this.thePaperService.getNewThePaper();
+      return await this.weiboService.getNewWeibo();
     } catch (error) {
       throw new HttpException('获取失败', HttpStatus.INTERNAL_SERVER_ERROR);
     }

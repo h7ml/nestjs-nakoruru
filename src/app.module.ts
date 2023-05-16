@@ -11,6 +11,7 @@ import { BilibiliModule } from './bilibili/bilibili.module';
 import { ZhihuModule } from './zhihu/zhihu.module';
 import { TiebaModule } from './tieba/tieba.module';
 import { ThepaperModule } from './thepaper/thepaper.module';
+import { WeiboModule } from './weibo/weibo.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -26,6 +27,7 @@ import { ThepaperModule } from './thepaper/thepaper.module';
     ZhihuModule,
     TiebaModule,
     ThepaperModule,
+    WeiboModule,
   ],
   controllers: [],
   providers: [],
