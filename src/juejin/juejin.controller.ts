@@ -1,5 +1,5 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 
 interface JuejinResponse {
@@ -31,6 +31,7 @@ export class JuejinController {
   }
 
   @Get()
+  @ApiOperation({ summary: '获取稀土掘金热榜' })
   @ApiResponse({ status: 200, description: '获取稀土掘金热榜成功' })
   @ApiResponse({ status: 500, description: '获取稀土掘金热榜失败' })
   async getJuejin() {
@@ -55,6 +56,7 @@ export class JuejinController {
   }
 
   @Get('new')
+  @ApiOperation({ summary: '获取最新稀土掘金热榜' })
   @ApiResponse({ status: 200, description: '获取最新稀土掘金热榜成功' })
   @ApiResponse({ status: 500, description: '获取最新稀土掘金热榜失败' })
   async getNewJuejin() {

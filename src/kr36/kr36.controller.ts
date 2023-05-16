@@ -1,5 +1,5 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 
 interface KrResponse {
@@ -34,6 +34,7 @@ export class KrController {
   }
 
   @Get()
+  @ApiOperation({ summary: '获取36氪热榜' })
   @ApiResponse({ status: 200, description: '获取36氪热榜成功' })
   @ApiResponse({ status: 500, description: '获取36氪热榜失败' })
   async getKr() {
@@ -64,6 +65,7 @@ export class KrController {
   }
 
   @Get('new')
+  @ApiOperation({ summary: '获取最新36氪热榜' })
   @ApiResponse({ status: 200, description: '获取最新36氪热榜成功' })
   @ApiResponse({ status: 500, description: '获取最新36氪热榜失败' })
   async getNewKr() {

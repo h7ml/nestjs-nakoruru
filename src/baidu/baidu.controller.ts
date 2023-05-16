@@ -1,5 +1,5 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 
 interface BaiduResponse {
@@ -38,6 +38,7 @@ export class BaiduController {
   }
 
   @Get()
+  @ApiOperation({ summary: '获取百度热搜榜' })
   @ApiResponse({ status: 200, description: '获取百度热搜榜' })
   async getBaidu() {
     try {
@@ -62,6 +63,7 @@ export class BaiduController {
   }
 
   @Get('new')
+  @ApiOperation({ summary: '获取百度热搜榜的最新数据' })
   @ApiResponse({ status: 200, description: '获取百度热搜榜的最新数据' })
   async getNewBaidu() {
     try {

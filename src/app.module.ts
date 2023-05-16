@@ -10,6 +10,7 @@ import { BaiduModule } from './baidu/baidu.module';
 import { BilibiliModule } from './bilibili/bilibili.module';
 import { ZhihuModule } from './zhihu/zhihu.module';
 import { TiebaModule } from './tieba/tieba.module';
+import { ThepaperModule } from './thepaper/thepaper.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -24,6 +25,7 @@ import { TiebaModule } from './tieba/tieba.module';
     BilibiliModule,
     ZhihuModule,
     TiebaModule,
+    ThepaperModule,
   ],
   controllers: [],
   providers: [],
