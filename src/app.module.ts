@@ -12,6 +12,7 @@ import { ZhihuModule } from './zhihu/zhihu.module';
 import { TiebaModule } from './tieba/tieba.module';
 import { ThepaperModule } from './thepaper/thepaper.module';
 import { WeiboModule } from './weibo/weibo.module';
+import { SspaiModule } from './sspai/sspai.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -28,6 +29,7 @@ import { WeiboModule } from './weibo/weibo.module';
     TiebaModule,
     ThepaperModule,
     WeiboModule,
+    SspaiModule,
   ],
   controllers: [],
   providers: [],
