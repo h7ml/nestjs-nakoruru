@@ -1,4 +1,5 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 
 interface BaiduResponse {
@@ -7,12 +8,14 @@ interface BaiduResponse {
   }[];
 }
 
+@ApiTags('baidu')
 @Controller('baidu')
 export class BaiduController {
   private readonly url = 'https://top.baidu.com/board?tab=realtime';
   private readonly cacheKey = 'baiduData';
   private updateTime = new Date().toISOString();
 
+  // 数据处理方法
   private getData(data): any[] {
     if (!data) return [];
     try {
@@ -35,6 +38,7 @@ export class BaiduController {
   }
 
   @Get()
+  @ApiResponse({ status: 200, description: '获取百度热搜榜' })
   async getBaidu() {
     try {
       const response = await axios.get(this.url);
@@ -58,6 +62,7 @@ export class BaiduController {
   }
 
   @Get('new')
+  @ApiResponse({ status: 200, description: '获取百度热搜榜的最新数据' })
   async getNewBaidu() {
     try {
       const response = await axios.get(this.url);

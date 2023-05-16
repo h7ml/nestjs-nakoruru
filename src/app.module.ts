@@ -8,6 +8,7 @@ import { JuejinModule } from './juejin/juejin.module';
 import { Kr36Module } from './kr36/kr36.module';
 import { BaiduModule } from './baidu/baidu.module';
 import { BilibiliModule } from './bilibili/bilibili.module';
+import { ZhihuModule } from './zhihu/zhihu.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -20,6 +21,7 @@ import { BilibiliModule } from './bilibili/bilibili.module';
     Kr36Module,
     BaiduModule,
     BilibiliModule,
+    ZhihuModule,
   ],
   controllers: [],
   providers: [],

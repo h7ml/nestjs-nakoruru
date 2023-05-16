@@ -1,13 +1,14 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 
 interface KrResponse {
   data: {
-    hotRankList(hotRankList: any): unknown;
-    data: any[];
+    hotRankList: any[];
   };
 }
 
+@ApiTags('36kr')
 @Controller('36kr')
 export class KrController {
   private readonly url =
@@ -15,6 +16,7 @@ export class KrController {
   private readonly cacheKey = 'krData';
   private updateTime = new Date().toISOString();
 
+  // 数据处理方法
   private getData(data): any[] {
     if (!data) return [];
     return data.map((v) => {
@@ -32,8 +34,11 @@ export class KrController {
   }
 
   @Get()
+  @ApiResponse({ status: 200, description: '获取36氪热榜成功' })
+  @ApiResponse({ status: 500, description: '获取36氪热榜失败' })
   async getKr() {
     try {
+      // 从36氪获取热榜数据
       const response = await axios.post(this.url, {
         partner_id: 'wap',
         param: {
@@ -59,8 +64,11 @@ export class KrController {
   }
 
   @Get('new')
+  @ApiResponse({ status: 200, description: '获取最新36氪热榜成功' })
+  @ApiResponse({ status: 500, description: '获取最新36氪热榜失败' })
   async getNewKr() {
     try {
+      // 从36氪获取最新热榜数据
       const response = await axios.post(this.url, {
         partner_id: 'wap',
         param: {

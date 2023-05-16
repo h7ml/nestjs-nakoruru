@@ -1,13 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { BilibiliService } from './bilibili.service';
 
+@ApiTags('bilibili')
 @Controller('bilibili')
 export class BilibiliController {
+  // 注入哔哩哔哩服务
   constructor(private readonly bilibiliService: BilibiliService) { }
 
   @Get()
+  @ApiResponse({ status: 200, description: '获取哔哩哔哩热门榜' })
+  @ApiResponse({ status: 500, description: '获取失败' })
   async getBilibiliHot(): Promise<any> {
     try {
+      // 使用服务获取哔哩哔哩热门榜数据
       const data = await this.bilibiliService.getHotList();
       return {
         code: 200,

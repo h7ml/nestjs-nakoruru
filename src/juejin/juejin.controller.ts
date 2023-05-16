@@ -1,4 +1,5 @@
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 
 interface JuejinResponse {
@@ -7,6 +8,7 @@ interface JuejinResponse {
   };
 }
 
+@ApiTags('juejin')
 @Controller('juejin')
 export class JuejinController {
   private readonly url =
@@ -14,6 +16,7 @@ export class JuejinController {
   private readonly cacheKey = 'juejinData';
   private updateTime = new Date().toISOString();
 
+  // 数据处理方法
   private getData(data): any[] {
     if (!data) return [];
     return data.map((v) => {
@@ -28,8 +31,11 @@ export class JuejinController {
   }
 
   @Get()
+  @ApiResponse({ status: 200, description: '获取稀土掘金热榜成功' })
+  @ApiResponse({ status: 500, description: '获取稀土掘金热榜失败' })
   async getJuejin() {
     try {
+      // 从稀土掘金获取热榜数据
       const response = await axios.get(this.url);
       const json = response.data as JuejinResponse;
       const data = this.getData(json.data);
@@ -49,8 +55,11 @@ export class JuejinController {
   }
 
   @Get('new')
+  @ApiResponse({ status: 200, description: '获取最新稀土掘金热榜成功' })
+  @ApiResponse({ status: 500, description: '获取最新稀土掘金热榜失败' })
   async getNewJuejin() {
     try {
+      // 从稀土掘金获取最新热榜数据
       const response = await axios.get(this.url);
       const json = response.data as JuejinResponse;
       const newData = this.getData(json.data);
