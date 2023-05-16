@@ -15,6 +15,7 @@ import { WeiboModule } from './weibo/weibo.module';
 import { SspaiModule } from './sspai/sspai.module';
 import { NewsqqModule } from './newsqq/newsqq.module';
 import { ToutiaoModule } from './toutiao/toutiao.module';
+import { UserModule } from './user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -34,6 +35,7 @@ import { ToutiaoModule } from './toutiao/toutiao.module';
     SspaiModule,
     NewsqqModule,
     ToutiaoModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
