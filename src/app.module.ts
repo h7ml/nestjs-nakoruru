@@ -3,6 +3,8 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { ConfigModule } from '@nestjs/config';
 
 import { join } from 'path';
+import { V2exModule } from './hotapi/v2ex/v2ex.module';
+import { DoubanModule } from './hotapi/douban/douban.module';
 const dynamicModules = [
   'system/user/user.module',
   'system/menu/menu.module',
@@ -31,6 +33,8 @@ const dynamicModules = [
       exclude: ['/api*'],
     }),
     ...dynamicModules,
+    V2exModule,
+    DoubanModule,
   ],
   controllers: [],
   providers: [],

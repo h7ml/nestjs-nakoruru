@@ -13,8 +13,8 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { User } from './user.entity';
 import { UserService } from './user.service';
 
-@ApiTags('娜可露露')
-@Controller('users')
+@ApiTags('system')
+@Controller('system/users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

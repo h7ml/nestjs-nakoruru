@@ -9,7 +9,7 @@ interface BaiduResponse {
 }
 
 @ApiTags('百度热搜')
-@Controller('baidu')
+@Controller('iotapi/baidu')
 export class BaiduController {
   private readonly url = 'https://top.baidu.com/board?tab=realtime';
   private readonly cacheKey = 'baiduData';

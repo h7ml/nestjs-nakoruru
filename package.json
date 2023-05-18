@@ -45,6 +45,7 @@
     "@types/lodash-es": "^4.17.7",
     "@types/mockjs": "^1.0.7",
     "axios": "^1.4.0",
+    "cheerio": "1.0.0-rc.12",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "lodash-es": "^4.17.21",

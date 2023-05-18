@@ -15,6 +15,5 @@ do
   nest generate module $name
   nest generate controller $name --no-spec
   nest generate service $name --no-spec
-
   echo "生成完成：$name"
 done
