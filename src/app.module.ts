@@ -16,6 +16,7 @@ import { SspaiModule } from './sspai/sspai.module';
 import { NewsqqModule } from './newsqq/newsqq.module';
 import { ToutiaoModule } from './toutiao/toutiao.module';
 import { UserModule } from './user/user.module';
+import { MenuModule } from './menu/menu.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -36,6 +37,7 @@ import { UserModule } from './user/user.module';
     NewsqqModule,
     ToutiaoModule,
     UserModule,
+    MenuModule,
   ],
   controllers: [],
   providers: [],
