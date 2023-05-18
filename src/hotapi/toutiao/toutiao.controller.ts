@@ -2,10 +2,10 @@ import { Controller, Get } from '@nestjs/common';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ToutiaoService } from './toutiao.service';
 
-@Controller('toutiao')
+@Controller('hotapi/toutiao')
 @ApiTags('今日头条')
 export class ToutiaoController {
-  constructor(private readonly toutiaoService: ToutiaoService) { }
+  constructor(private readonly toutiaoService: ToutiaoService) {}
 
   @Get()
   @ApiOperation({ summary: '获取头条热榜' })

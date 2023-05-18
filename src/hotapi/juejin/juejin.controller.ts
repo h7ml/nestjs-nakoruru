@@ -9,7 +9,7 @@ interface JuejinResponse {
 }
 
 @ApiTags('稀土掘金')
-@Controller('juejin')
+@Controller('hotapi/juejin')
 export class JuejinController {
   private readonly url =
     'https://api.juejin.cn/content_api/v1/content/article_rank?category_id=1&type=hot';

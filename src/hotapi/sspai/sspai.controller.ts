@@ -3,10 +3,10 @@ import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import axios from 'axios';
 import { SspaiService } from './sspai.service';
 
-@Controller('sspai')
+@Controller('hotapi/sspai')
 @ApiTags('少数派')
 export class SspaiController {
-  constructor(private readonly sspaiService: SspaiService) { }
+  constructor(private readonly sspaiService: SspaiService) {}
 
   @Get()
   @ApiOperation({ summary: '获取少数派热榜' })

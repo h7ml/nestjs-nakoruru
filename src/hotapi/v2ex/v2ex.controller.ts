@@ -3,7 +3,7 @@ import { V2exService } from './v2ex.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('v2ex')
-@Controller('iotapi/v2ex')
+@Controller('hotapi/v2ex')
 export class V2exController {
   constructor(private v2exService: V2exService) {}
 

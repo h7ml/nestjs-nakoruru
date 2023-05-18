@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { DoubanService } from './douban.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { DoubanItem } from './douban-item.model';
+import { Douban } from './douban-item.model';
 
 @ApiTags('douban')
 @Controller('iotapi/douban')
@@ -13,12 +13,14 @@ export class DoubanController {
   @ApiResponse({
     status: 200,
     description: '获取成功',
-    type: DoubanItem,
-    isArray: true,
+    type: Douban,
   })
   @ApiResponse({ status: 500, description: '获取失败' })
-  async getDouban(): Promise<DoubanItem[]> {
+  async getDouban(): Promise<Douban> {
     const { data } = await this.doubanService.getDouban();
-    return data;
+    return {
+      count: data.length,
+      data: data,
+    };
   }
 }

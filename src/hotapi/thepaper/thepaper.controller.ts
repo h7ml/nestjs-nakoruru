@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ThePaperService } from './thepaper.service';
 
 @ApiTags('澎湃')
-@Controller()
+@Controller('hotapi/thepaper')
 export class ThePaperController {
   constructor(private readonly thePaperService: ThePaperService) {}
 

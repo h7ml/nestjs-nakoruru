@@ -3,7 +3,7 @@ import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { WeiboService } from './weibo.service';
 
 @ApiTags('微博')
-@Controller()
+@Controller('hotapi/weibo')
 export class WeiboController {
   constructor(private readonly weiboService: WeiboService) {}
 

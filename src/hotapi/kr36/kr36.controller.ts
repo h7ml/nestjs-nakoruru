@@ -9,7 +9,7 @@ interface KrResponse {
 }
 
 @ApiTags('36氪')
-@Controller('36kr')
+@Controller('hotapi/36kr')
 export class KrController {
   private readonly url =
     'https://gateway.36kr.com/api/mis/nav/home/nav/rank/hot';
