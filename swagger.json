@@ -1,0 +1,473 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/users": {
+      "get": {
+        "operationId": "UserController_findAll",
+        "summary": "获取所有用户",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["娜可露露"]
+      },
+      "post": {
+        "operationId": "UserController_create",
+        "summary": "创建新用户",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "创建成功"
+          },
+          "500": {
+            "description": "创建失败"
+          }
+        },
+        "tags": ["娜可露露"]
+      }
+    },
+    "/api/users/{id}": {
+      "get": {
+        "operationId": "UserController_findOne",
+        "summary": "获取单个用户",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["娜可露露"]
+      },
+      "put": {
+        "operationId": "UserController_update",
+        "summary": "更新用户信息",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "更新成功"
+          },
+          "500": {
+            "description": "更新失败"
+          }
+        },
+        "tags": ["娜可露露"]
+      },
+      "delete": {
+        "operationId": "UserController_delete",
+        "summary": "删除用户",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "删除成功"
+          },
+          "500": {
+            "description": "删除失败"
+          }
+        },
+        "tags": ["娜可露露"]
+      }
+    },
+    "/api/juejin": {
+      "get": {
+        "operationId": "JuejinController_getJuejin",
+        "summary": "获取稀土掘金热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取稀土掘金热榜成功"
+          },
+          "500": {
+            "description": "获取稀土掘金热榜失败"
+          }
+        },
+        "tags": ["稀土掘金"]
+      }
+    },
+    "/api/juejin/new": {
+      "get": {
+        "operationId": "JuejinController_getNewJuejin",
+        "summary": "获取最新稀土掘金热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取最新稀土掘金热榜成功"
+          },
+          "500": {
+            "description": "获取最新稀土掘金热榜失败"
+          }
+        },
+        "tags": ["稀土掘金"]
+      }
+    },
+    "/api/36kr": {
+      "get": {
+        "operationId": "KrController_getKr",
+        "summary": "获取36氪热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取36氪热榜成功"
+          },
+          "500": {
+            "description": "获取36氪热榜失败"
+          }
+        },
+        "tags": ["36氪"]
+      }
+    },
+    "/api/36kr/new": {
+      "get": {
+        "operationId": "KrController_getNewKr",
+        "summary": "获取最新36氪热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取最新36氪热榜成功"
+          },
+          "500": {
+            "description": "获取最新36氪热榜失败"
+          }
+        },
+        "tags": ["36氪"]
+      }
+    },
+    "/api/baidu": {
+      "get": {
+        "operationId": "BaiduController_getBaidu",
+        "summary": "获取百度热搜榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取百度热搜榜"
+          }
+        },
+        "tags": ["百度热搜"]
+      }
+    },
+    "/api/baidu/new": {
+      "get": {
+        "operationId": "BaiduController_getNewBaidu",
+        "summary": "获取百度热搜榜的最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取百度热搜榜的最新数据"
+          }
+        },
+        "tags": ["百度热搜"]
+      }
+    },
+    "/api/bilibili": {
+      "get": {
+        "operationId": "BilibiliController_getBilibili",
+        "summary": "获取哔哩哔哩热门榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["哔哩哔哩"]
+      }
+    },
+    "/api/zhihu": {
+      "get": {
+        "operationId": "ZhihuController_getZhihuHot",
+        "summary": "获取知乎热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["知乎"]
+      }
+    },
+    "/api/zhihu/new": {
+      "get": {
+        "operationId": "ZhihuController_getZhihuHotNew",
+        "summary": "获取最新的知乎热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["知乎"]
+      }
+    },
+    "/api/tieba": {
+      "get": {
+        "operationId": "TiebaController_getTieba",
+        "summary": "获取贴吧热议榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["百度贴吧"]
+      }
+    },
+    "/api/tieba/new": {
+      "get": {
+        "operationId": "TiebaController_getNewTieba",
+        "summary": "获取最新的贴吧热议榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["百度贴吧"]
+      }
+    },
+    "/api/thepaper": {
+      "get": {
+        "operationId": "ThePaperController_getThePaper",
+        "summary": "获取澎湃热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": ["澎湃"]
+      }
+    },
+    "/api/thepaper/new": {
+      "get": {
+        "operationId": "ThePaperController_getNewThePaper",
+        "summary": "获取澎湃热榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": ["澎湃"]
+      }
+    },
+    "/api/weibo": {
+      "get": {
+        "operationId": "WeiboController_getWeibo",
+        "summary": "获取微博热搜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": ["微博"]
+      }
+    },
+    "/api/weibo/new": {
+      "get": {
+        "operationId": "WeiboController_getNewWeibo",
+        "summary": "获取微博热搜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": ["微博"]
+      }
+    },
+    "/api/newsqq": {
+      "get": {
+        "operationId": "NewsqqController_getNewsqq",
+        "summary": "获取腾讯热点榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["腾讯新闻"]
+      }
+    },
+    "/api/newsqq/new": {
+      "get": {
+        "operationId": "NewsqqController_getNewNewsqq",
+        "summary": "获取腾讯热点榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["腾讯新闻"]
+      }
+    },
+    "/api/toutiao": {
+      "get": {
+        "operationId": "ToutiaoController_getToutiao",
+        "summary": "获取头条热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["今日头条"]
+      }
+    },
+    "/api/toutiao/new": {
+      "get": {
+        "operationId": "ToutiaoController_getNewToutiao",
+        "summary": "获取头条热榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["今日头条"]
+      }
+    },
+    "/api/sspai": {
+      "get": {
+        "operationId": "SspaiController_getSspai",
+        "summary": "获取少数派热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["少数派"]
+      }
+    },
+    "/api/sspai/new": {
+      "get": {
+        "operationId": "SspaiController_getNewSspai",
+        "summary": "获取少数派热榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": ["少数派"]
+      }
+    }
+  },
+  "info": {
+    "title": "Nakoruru Backend API",
+    "description": "The Nakoruru Backend API description by h7ml",
+    "version": "0.0.1",
+    "contact": {
+      "name": "Contact Name",
+      "url": "http://github.com/h7ml",
+      "email": "h7ml@qq.com"
+    },
+    "termsOfService": "https://nestjs.h7ml.cn/",
+    "license": {
+      "name": "Apache-2.0",
+      "url": "https://github.com/h7ml/nestjs-nakoruru/blob/master/license"
+    }
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Nakoruru",
+    "url": "https://nestjs.h7ml.cn/"
+  }
+}

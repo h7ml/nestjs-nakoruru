@@ -17,6 +17,7 @@
   ],
   "homepage": "https:/nestjs-nakoruru.h7ml.cn",
   "scripts": {
+    "generate": "bash ./nest-generate.sh",
     "build": "nest build",
     "format": "prettier --write .",
     "start": "nest start",
