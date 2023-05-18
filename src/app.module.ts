@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { join } from 'path';
 import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
+import { HupuModule } from './hotapi/hupu/hupu.module';
 const dynamicModules = [
   'system/user/user.module',
   'system/menu/menu.module',
@@ -35,6 +36,7 @@ const dynamicModules = [
     ...dynamicModules,
     V2exModule,
     DoubanModule,
+    HupuModule,
   ],
   controllers: [],
   providers: [],
