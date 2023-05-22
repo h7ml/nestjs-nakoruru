@@ -1,42 +1,34 @@
-# 第一阶段：构建阶段
-FROM node:16-alpine AS build
+FROM node:20-alpine as builder
 
-# 设置工作目录
-WORKDIR /nestjs-nakoruru
+ENV NODE_ENV build
 
-# 将 package.json、pnpm-lock.yaml 和 .npmrc 复制到工作目录
+USER root
+WORKDIR /home/node
+
 COPY package*.json ./
 COPY pnpm-lock.yaml ./
 
-# 安装依赖包
-RUN npm install -g pnpm increase-memory-limit --no-cache
+RUN npm install -g npm@9.6.7 pnpm
 
-# RUN increase-memory-limit
+USER node
 
-RUN pnpm install --no-cache
+RUN pnpm install
 
-# 将所有文件复制到工作目录
-COPY . .
+COPY --chown=node:node . /home/node
 
-# 打包项目
-# RUN node --max-old-space-size=6000
+RUN npm run build 
 
-RUN pnpm run build
+# ---
 
-# 第二阶段：部署阶段
-FROM nginx
+FROM node:20-alpine
 
-# 复制打包后的 dist 文件夹到默认的 Nginx 静态文件目录
-COPY --from=build /nestjs-nakoruru/dist /usr/share/nginx/html
+ENV NODE_ENV production
 
-# 复制 Nginx 配置文件到默认的 Nginx 配置文件目录
-COPY --from=build /nestjs-nakoruru/src/nginx.conf /etc/nginx/conf.d/default.conf
+USER node
+WORKDIR /home/node
 
-# 开启 gzip 压缩
-RUN sed -i 's/#gzip/gzip/' /etc/nginx/nginx.conf
-
-# 将容器的端口映射到宿主机的 80 端口
-EXPOSE 80
-
-# 启动 Nginx 服务
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=builder /home/node/package*.json ./
+COPY --from=builder /home/node/node_modules/ ./node_modules/
+COPY --from=builder /home/node/dist/ ./dist/
+COPY --from=builder /home/node/src/pages/ ./src/pages/
+CMD ["node", "dist/main.js"]

@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { HuPuService } from './hupu.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 @ApiTags('hupu')
-@Controller('iotapi/hupu')
+@Controller('hotapi/hupu')
 export class HupuController {
   constructor(private readonly hupuService: HuPuService) {}
 
