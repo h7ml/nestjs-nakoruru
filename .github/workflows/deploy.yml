@@ -44,11 +44,10 @@ jobs:
           pnpm run build
 
       - name: Deploy to Vercel 🚀
-        uses: amondnet/vercel-action@master
+        run: npx vercel --token ${VERCEL_TOKEN} --prod
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: '--prod' #Optional
-          github-token: ${{ secrets.GIT_TOKEN }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          path: public
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          # vercel-args: '--prod' #Optional
+          # github-token: ${{ secrets.GIT_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
