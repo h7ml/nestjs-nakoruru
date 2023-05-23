@@ -6,4 +6,4 @@ import { NewsqqService } from './newsqq.service';
   controllers: [NewsqqController],
   providers: [NewsqqService],
 })
-export class NewsqqModule { }
+export class NewsqqModule {}

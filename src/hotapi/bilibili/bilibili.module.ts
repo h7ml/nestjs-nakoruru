@@ -6,4 +6,4 @@ import { BilibiliController } from './bilibili.controller';
   providers: [BilibiliService],
   controllers: [BilibiliController],
 })
-export class BilibiliModule { }
+export class BilibiliModule {}

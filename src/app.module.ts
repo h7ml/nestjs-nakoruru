@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { join } from 'path';
 import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
 import { HupuModule } from './hotapi/hupu/hupu.module';
+import { TypeOrmConfig } from './config';
 const dynamicModules = [
   'system/user/user.module',
   'system/menu/menu.module',
@@ -28,6 +30,7 @@ const dynamicModules = [
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot({ ...TypeOrmConfig }),
     ConfigModule.forRoot(),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'src/pages/home/'),

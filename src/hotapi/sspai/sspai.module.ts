@@ -6,4 +6,4 @@ import { SspaiService } from './sspai.service';
   controllers: [SspaiController],
   providers: [SspaiService],
 })
-export class SspaiModule { }
+export class SspaiModule {}

@@ -42,15 +42,20 @@
     "@nestjs/platform-express": "^9.4.0",
     "@nestjs/serve-static": "^3.0.1",
     "@nestjs/swagger": "^6.3.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "@types/dotenv": "^8.2.0",
     "@types/lodash-es": "^4.17.7",
     "@types/mockjs": "^1.0.7",
     "axios": "^1.4.0",
     "cheerio": "1.0.0-rc.12",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "dotenv": "^16.0.3",
     "lodash-es": "^4.17.21",
     "mockjs": "^1.1.0",
-    "reflect-metadata": "^0.1.13"
+    "mysql2": "^3.3.2",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.16"
   },
   "devDependencies": {
     "@femm/prettier": "^1.0.2",

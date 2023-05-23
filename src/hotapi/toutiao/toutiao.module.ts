@@ -6,4 +6,4 @@ import { ToutiaoService } from './toutiao.service';
   controllers: [ToutiaoController],
   providers: [ToutiaoService],
 })
-export class ToutiaoModule { }
+export class ToutiaoModule {}

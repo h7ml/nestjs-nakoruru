@@ -6,4 +6,4 @@ import { WeiboService } from './weibo.service';
   controllers: [WeiboController],
   providers: [WeiboService],
 })
-export class WeiboModule { }
+export class WeiboModule {}

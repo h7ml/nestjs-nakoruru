@@ -6,4 +6,4 @@ import { ZhihuService } from './zhihu.service';
   controllers: [ZhihuController],
   providers: [ZhihuService],
 })
-export class ZhihuModule { }
+export class ZhihuModule {}

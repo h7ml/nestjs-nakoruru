@@ -4,4 +4,4 @@ import { KrController } from './kr36.controller';
 @Module({
   controllers: [KrController],
 })
-export class Kr36Module { }
+export class Kr36Module {}

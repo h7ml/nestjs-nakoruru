@@ -6,4 +6,4 @@ import { ThePaperService } from './thepaper.service';
   controllers: [ThePaperController],
   providers: [ThePaperService],
 })
-export class ThepaperModule { }
+export class ThepaperModule {}

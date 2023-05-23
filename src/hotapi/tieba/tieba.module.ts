@@ -6,4 +6,4 @@ import { TiebaController } from './tieba.controller';
   providers: [TiebaService],
   controllers: [TiebaController],
 })
-export class TiebaModule { }
+export class TiebaModule {}
