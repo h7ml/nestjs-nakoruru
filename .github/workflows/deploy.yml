@@ -45,7 +45,7 @@ jobs:
 
       - name: Deploy to Vercel 🚀
         run: npx vercel --token ${VERCEL_TOKEN} --prod
-        with:
+        env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           # vercel-args: '--prod' #Optional
