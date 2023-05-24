@@ -55,6 +55,7 @@
     "mockjs": "^1.1.0",
     "mysql2": "^3.3.2",
     "reflect-metadata": "^0.1.13",
+    "rxjs": "7",
     "typeorm": "^0.3.16"
   },
   "devDependencies": {
