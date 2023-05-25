@@ -42,11 +42,11 @@ export class MenuController {
   @ApiResponse({ status: 500, description: '获取失败' })
   async findOne(@Param('id') id: number) {
     try {
-      const data = await this.menuService.findOne(id);
+      // const data = await this.menuService.findOne(id);
       return {
         code: 200,
         message: '获取成功',
-        data,
+        data: [],
       };
     } catch (error) {
       throw new HttpException('获取失败', HttpStatus.INTERNAL_SERVER_ERROR);

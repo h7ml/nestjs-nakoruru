@@ -20,9 +20,9 @@ export class MenuService {
     return info;
   }
 
-  async findOne(id: number): Promise<Menu> {
-    return this.menuRepository.findOne({ id });
-  }
+  // async findOne(id?: number): Promise<Menu> {
+  //   return this.menuRepository.findOne();
+  // }
 
   async create(menu: Menu): Promise<Menu> {
     return this.menuRepository.save(menu);

@@ -14,6 +14,7 @@ specifiers:
   '@nestjs/swagger': ^6.3.0
   '@nestjs/testing': ^9.0.0
   '@nestjs/typeorm': ^9.0.1
+  '@types/cors': ^2.8.13
   '@types/dotenv': ^8.2.0
   '@types/express': ^4.17.13
   '@types/jest': 29.5.0
@@ -28,6 +29,7 @@ specifiers:
   cheerio: 1.0.0-rc.12
   class-transformer: ^0.5.1
   class-validator: ^0.14.0
+  cors: ^2.8.5
   dotenv: ^16.0.3
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
@@ -59,6 +61,7 @@ dependencies:
   '@nestjs/serve-static': 3.0.1_vvseeod2xqyxa5e6u4g4d4amjm
   '@nestjs/swagger': 6.3.0_cgtatson3ey7mfrpxh2jfb4zpu
   '@nestjs/typeorm': 9.0.1_jokqutq64fcayux5qfqoidh2g4
+  '@types/cors': 2.8.13
   '@types/dotenv': 8.2.0
   '@types/lodash-es': 4.17.7
   '@types/mockjs': 1.0.7
@@ -66,6 +69,7 @@ dependencies:
   cheerio: 1.0.0-rc.12
   class-transformer: 0.5.1
   class-validator: 0.14.0
+  cors: 2.8.5
   dotenv: 16.0.3
   lodash-es: 4.17.21
   mockjs: 1.1.0
@@ -1318,6 +1322,12 @@ packages:
   /@types/cookiejar/2.1.2:
     resolution: {integrity: sha512-t73xJJrvdTjXrn4jLS9VSGRbz0nUY3cl2DMGDU48lKl+HR9dbbjW2A9r3g40VA++mQpy6uuHg33gy7du2BKpog==}
     dev: true
+
+  /@types/cors/2.8.13:
+    resolution: {integrity: sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==}
+    dependencies:
+      '@types/node': 18.15.11
+    dev: false
 
   /@types/dotenv/8.2.0:
     resolution: {integrity: sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==}
