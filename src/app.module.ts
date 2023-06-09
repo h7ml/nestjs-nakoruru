@@ -9,25 +9,19 @@ import { DoubanModule } from './hotapi/douban/douban.module';
 import { HupuModule } from './hotapi/hupu/hupu.module';
 import { TypeOrmConfig } from './config';
 import { OrderModule } from './order/order.module';
-const dynamicModules = [
-  'system/user/user.module',
-  'system/menu/menu.module',
-  'hotapi/juejin/juejin.module',
-  'hotapi/kr36/kr36.module',
-  'hotapi/baidu/baidu.module',
-  'hotapi/bilibili/bilibili.module',
-  'hotapi/zhihu/zhihu.module',
-  'hotapi/tieba/tieba.module',
-  'hotapi/thepaper/thepaper.module',
-  'hotapi/weibo/weibo.module',
-  'hotapi/newsqq/newsqq.module',
-  'hotapi/toutiao/toutiao.module',
-  'hotapi/sspai/sspai.module',
-].map((modulePath) => {
-  return import(`./${modulePath}`).then(
-    (module) => module[Object.keys(module)[0]],
-  );
-});
+import { UserModule } from './system/user/user.module';
+import { MenuModule } from './system/menu/menu.module';
+import { JuejinModule } from './hotapi/juejin/juejin.module';
+import { Kr36Module } from './hotapi/kr36/kr36.module';
+import { BaiduModule } from './hotapi/baidu/baidu.module';
+import { BilibiliModule } from './hotapi/bilibili/bilibili.module';
+import { ZhihuModule } from './hotapi/zhihu/zhihu.module';
+import { TiebaModule } from './hotapi/tieba/tieba.module';
+import { ThepaperModule } from './hotapi/thepaper/thepaper.module';
+import { WeiboModule } from './hotapi/weibo/weibo.module';
+import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
+import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
+import { SspaiModule } from './hotapi/sspai/sspai.module';
 
 @Module({
   imports: [
@@ -37,7 +31,19 @@ const dynamicModules = [
       rootPath: join(__dirname, '..', 'src/pages/home/'),
       exclude: ['/api*'],
     }),
-    ...dynamicModules,
+    UserModule,
+    MenuModule,
+    JuejinModule,
+    Kr36Module,
+    BaiduModule,
+    BilibiliModule,
+    ZhihuModule,
+    TiebaModule,
+    ThepaperModule,
+    WeiboModule,
+    NewsqqModule,
+    ToutiaoModule,
+    SspaiModule,
     V2exModule,
     DoubanModule,
     HupuModule,
