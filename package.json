@@ -15,7 +15,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
   ],
-  "homepage": "https:/nestjs-nakoruru.h7ml.cn",
+  "homepage": "https://nestjs-nakoruru.h7ml.cn",
   "scripts": {
     "generate": "bash ./nest-generate.sh",
     "build": "nest build",

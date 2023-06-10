@@ -10,11 +10,16 @@
   <a href="https://github.com/h7ml/nestjs-nakoruru/blob/master/LICENSE" target="_blank">
     <img alt="License: Apache--2.0" src="https://img.shields.io/github/license/h7ml/nestjs-nakoruru/nestjs-nakoruru" />
   </a>
+    <a href="https://hub.docker.com/repository/docker/h7ml/nakoruru/general" target="_blank">
+    <img alt="docker: nakoruru" src="https://img.shields.io/docker/v/h7ml/nakoruru" />
+  </a>
+  <a href="https://hub.docker.com/repository/docker/h7ml/nestjs-nakoruru/general" target="_blank">
+    <img alt="docker: nakoruru" src="https://img.shields.io/docker/v/h7ml/nestjs-nakoruru" />  </a>
 </p>
 
 > Nakoruru Backend is a robust and efficient microservices-based backend system powered by Nest.js and Node.js. It provides a reliable, scalable, and secure foundation for the Nakoruru React Admin project. This backend system adopts modern design patterns and industry best practices to ensure optimal performance, stability, and maintainability. It effectively handles requests, processes data, and communicates with databases, enabling comprehensive data management capabilities for the Nakoruru platform. With the integration of Nest.js, an extensible, versatile, and scriptable backend framework, Nakoruru Backend empowers businesses to build high-performing, user-centric applications. This system seamlessly matches the needs of businesses and organizations of all sizes, providing an all-rounded backend solution that powers the Nakoruru platform.
 
-### 🏠 [Homepage](https:/nestjs-nakoruru.h7ml.cn)
+### 🏠 [Homepage](https://nestjs-nakoruru.h7ml.cn)
 
 ## Author
 
