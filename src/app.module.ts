@@ -30,10 +30,10 @@ import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter'
 import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
 @Module({
   imports: [
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'src/pages/home/'),
-    //   exclude: ['/api*'],
-    // }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'src/public/'),
+      exclude: ['/api*'],
+    }),
     TypeOrmModule.forRoot({ ...TypeOrmConfig }),
     ConfigModule.forRoot({
       isGlobal: true,

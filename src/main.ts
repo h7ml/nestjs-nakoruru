@@ -13,20 +13,21 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(
-    AppModule,
-    new FastifyAdapter(),
-  );
+  // const app = await NestFactory.create<NestFastifyApplication>(
+  //   AppModule,
+  //   new FastifyAdapter(),
+  // );
+  const app = await NestFactory.create(AppModule);
   // 统一响应体格式
   app.useGlobalInterceptors(new TransformInterceptor());
 
   // 接口版本化管理
   app.enableVersioning({ type: VersioningType.URI });
   app.setGlobalPrefix('api');
-  app.useStaticAssets({
-    root: join(__dirname, '..', 'public'),
-    prefix: '/',
-  });
+  // app.useStaticAssets({
+  //   root: join(__dirname, '..', 'public'),
+  //   prefix: '/',
+  // });
   generateDocument(app);
   // 热重载
   if (module.hot) {
