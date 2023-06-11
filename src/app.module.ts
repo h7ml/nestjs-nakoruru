@@ -24,12 +24,10 @@ import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
 import { ReactFlowModule } from './react-flow/react-flow.module';
 import { LogsConfigModule } from './common/logs-config/logs-config.module';
-import { getConfig, getEnv } from './config/configuration';
+import { getConfig } from './config/configuration';
 import { APP_FILTER } from '@nestjs/core';
 import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
 import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
-
-const environment = getEnv() ?? 'dev';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
@@ -42,7 +40,7 @@ const environment = getEnv() ?? 'dev';
       ignoreEnvFile: true,
       load: [getConfig],
     }),
-    environment === 'dev' ? LogsConfigModule : '',
+    LogsConfigModule,
     UserModule,
     MenuModule,
     JuejinModule,

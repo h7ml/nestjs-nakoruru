@@ -6,11 +6,12 @@ import { Console } from 'winston/lib/winston/transports';
 import * as DailyRotateFile from 'winston-daily-rotate-file';
 import { LogsConfigService } from './logs-config.service';
 import { ConfigEnum } from '../enum/config.enum';
+import { join } from 'path';
 
 function createDailyRotateTransport(level: string, filename: string) {
   return new DailyRotateFile({
     level,
-    dirname: 'logs',
+    dirname: join(__dirname, '..', 'logs'),
     filename: `${filename}-%DATE%.log`,
     datePattern: 'YYYY-MM-DD-HH',
     zippedArchive: true,
