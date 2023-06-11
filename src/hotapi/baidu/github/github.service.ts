@@ -4,7 +4,9 @@ import axios from 'axios';
 @Injectable()
 export class GithubService {
   async getGithubData(optionLanguage: string, optionSince: string) {
-    const url = `https://kaifa.baidu.com/rest/v1/home/github?optionLanguage=${optionLanguage}&optionSince=${optionSince}`;
+    const encodedOptionLanguage = encodeURIComponent(optionLanguage);
+    const encodedOptionSince = encodeURIComponent(optionSince);
+    const url = `https://kaifa.baidu.com/rest/v1/home/github?optionLanguage=${encodedOptionLanguage}&optionSince=${encodedOptionSince}`;
 
     try {
       const response = await axios.get(url);

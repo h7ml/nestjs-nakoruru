@@ -22,6 +22,7 @@ import { WeiboModule } from './hotapi/weibo/weibo.module';
 import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
+import { ReactFlowModule } from './react-flow/react-flow.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { SspaiModule } from './hotapi/sspai/sspai.module';
     DoubanModule,
     HupuModule,
     OrderModule,
+    ReactFlowModule,
   ],
   controllers: [],
   providers: [],

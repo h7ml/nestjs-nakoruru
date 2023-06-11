@@ -58,6 +58,7 @@
     "mockjs": "^1.1.0",
     "mysql2": "^3.3.3",
     "npm-check-updates": "^16.10.12",
+    "react-flow-renderer": "^10.3.17",
     "reflect-metadata": "^0.1.13",
     "rxjs": "7",
     "typeorm": "^0.3.16"
