@@ -23,7 +23,7 @@ import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
 import { ReactFlowModule } from './react-flow/react-flow.module';
-import { LogsConfigModule } from './common/logs-config/logs-config.module';
+// import { LogsConfigModule } from './common/logs-config/logs-config.module';
 import { getConfig } from './config/configuration';
 import { APP_FILTER } from '@nestjs/core';
 import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
@@ -40,7 +40,7 @@ import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
       ignoreEnvFile: true,
       load: [getConfig],
     }),
-    LogsConfigModule,
+    // LogsConfigModule,
     UserModule,
     MenuModule,
     JuejinModule,
