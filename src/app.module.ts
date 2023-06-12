@@ -1,9 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ServeStaticModule } from '@nestjs/serve-static';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
-import { join } from 'path';
 import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
 import { HupuModule } from './hotapi/hupu/hupu.module';
@@ -23,24 +20,20 @@ import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
 import { ReactFlowModule } from './react-flow/react-flow.module';
-import { LogsConfigModule } from './common/logs-config/logs-config.module';
+// import { LogsConfigModule } from './common/logs-config/logs-config.module';
 import { getConfig } from './config/configuration';
-import { APP_FILTER } from '@nestjs/core';
-import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
-import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
+// import { APP_FILTER } from '@nestjs/core';
+// import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
+// import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
 @Module({
   imports: [
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '../../', 'src/public/'),
-    //   exclude: ['/api*'],
-    // }),
     TypeOrmModule.forRoot({ ...TypeOrmConfig }),
     ConfigModule.forRoot({
       isGlobal: true,
       ignoreEnvFile: true,
       load: [getConfig],
     }),
-    LogsConfigModule,
+    // LogsConfigModule,
     UserModule,
     MenuModule,
     JuejinModule,
@@ -62,14 +55,14 @@ import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
   ],
   controllers: [],
   providers: [
-    {
-      provide: APP_FILTER,
-      useClass: AllExceptionsFilter,
-    },
-    {
-      provide: APP_FILTER,
-      useClass: HttpExceptionFilter,
-    },
+    // {
+    //   provide: APP_FILTER,
+    //   useClass: AllExceptionsFilter,
+    // },
+    // {
+    //   provide: APP_FILTER,
+    //   useClass: HttpExceptionFilter,
+    // },
   ],
 })
 export class AppModule {}
