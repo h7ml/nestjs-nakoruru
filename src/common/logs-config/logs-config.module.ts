@@ -9,6 +9,11 @@ import { ConfigEnum } from '../enum/config.enum';
 import { join } from 'path';
 
 function createDailyRotateTransport(level: string, filename: string) {
+  console.log(
+    '%c [   join(__dirname, "..", "logs") ]-13',
+    'font-size:13px; background:pink; color:#bf2c9f;',
+    join(__dirname, '..', 'logs'),
+  );
   return new DailyRotateFile({
     level,
     dirname: join(__dirname, '..', 'logs'),

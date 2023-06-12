@@ -30,5 +30,5 @@ WORKDIR /home/node
 COPY --from=builder /home/node/package*.json ./
 COPY --from=builder /home/node/node_modules/ ./node_modules/
 COPY --from=builder /home/node/dist/ ./dist/
-COPY --from=builder /home/node/src/pages/ ./src/pages/
+# COPY --from=builder /home/node/src/pages/ ./src/pages/
 CMD ["node", "dist/main.js"]

@@ -48,7 +48,6 @@ export class WeiboService {
   }
 
   async getWeibo() {
-    console.log('获取微博热搜');
     const response = await axios.get<WeiboResponse>(this.url);
     const data = this.getData(response.data.data.realtime);
     this.updateTime = new Date().toISOString();
@@ -64,7 +63,6 @@ export class WeiboService {
   }
 
   async getNewWeibo() {
-    console.log('获取微博热搜 - 最新数据');
     const response = await axios.get<WeiboResponse>(this.url);
     const newData = this.getData(response.data.data.realtime);
     this.updateTime = new Date().toISOString();

@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-06-11 22:48:55
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-11 23:07:30
+ * @LastEditTime: 2023-06-12 23:12:21
  * @FilePath: \nestjs-nakoruru\src\common\exceptions\http.exception.filter.ts
  * @Description:
  *
@@ -61,7 +61,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
     }
 
     const exResponse = exception.getResponse();
-
     if (typeof exResponse === 'string') {
       response.status(status).send({
         statusCode: status,

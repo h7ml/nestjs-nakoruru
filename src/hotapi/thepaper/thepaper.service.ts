@@ -8,8 +8,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-16 13:04:34
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-16 13:04:34
- * @FilePath: \nestjs-nakoruru\src\thepaper\thepaper.service.ts
+ * @LastEditTime: 2023-06-12 23:12:36
+ * @FilePath: \nestjs-nakoruru\src\hotapi\thepaper\thepaper.service.ts
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -45,7 +45,6 @@ export class ThePaperService {
   }
 
   async getThePaper() {
-    console.log('获取澎湃热榜');
     const response = await axios.get<ThePaperResponse>(this.url);
     const data = this.getData(response.data.data.hotNews);
     this.updateTime = new Date().toISOString();
@@ -61,7 +60,6 @@ export class ThePaperService {
   }
 
   async getNewThePaper() {
-    console.log('获取澎湃热榜 - 最新数据');
     const response = await axios.get<ThePaperResponse>(this.url);
     const newData = this.getData(response.data.data.hotNews);
     this.updateTime = new Date().toISOString();
