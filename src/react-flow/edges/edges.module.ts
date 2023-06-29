@@ -4,6 +4,6 @@ import { EdgesService } from './edges.service';
 
 @Module({
   controllers: [EdgesController],
-  providers: [EdgesService]
+  providers: [EdgesService],
 })
 export class EdgesModule {}

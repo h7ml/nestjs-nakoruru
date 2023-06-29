@@ -7,6 +7,6 @@ import { EdgesModule } from './edges/edges.module';
 @Module({
   controllers: [ReactFlowController],
   providers: [ReactFlowService],
-  imports: [NodesModule, EdgesModule]
+  imports: [NodesModule, EdgesModule],
 })
 export class ReactFlowModule {}

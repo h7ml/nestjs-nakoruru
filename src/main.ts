@@ -45,10 +45,10 @@ async function bootstrap() {
   const serverValue = configService.get(ConfigEnum.SERVER_VALUE);
   await app.listen(serverValue.port, serverValue.host);
   const environment = getEnv() ?? 'dev';
-  if (environment === 'dev')
-    open_url_by_browser(
-      `http://${serverValue.host}:${serverValue.port}`,
-      'chrome',
-    );
+  // if (environment === 'dev')
+  //   open_url_by_browser(
+  //     `http://${serverValue.host}:${serverValue.port}`,
+  //     'chrome',
+  //   );
 }
 bootstrap();

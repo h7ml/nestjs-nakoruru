@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SwaggerController } from './swagger.controller';
+
 import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
 import { HupuModule } from './hotapi/hupu/hupu.module';
@@ -30,12 +32,6 @@ import { getConfig, getEnv } from './config/configuration';
 const environment = getEnv() ?? 'dev';
 const rootpath =
   environment === 'dev' ? join(__dirname, '..', 'src', 'public') : '/public/';
-console.log(
-  '%c [ rootpath ]-36',
-  environment,
-  'font-size:13px; background:pink; color:#bf2c9f;',
-  rootpath,
-);
 @Module({
   imports: [
     ServeStaticModule.forRoot({
@@ -68,7 +64,7 @@ console.log(
     OrderModule,
     ReactFlowModule,
   ],
-  controllers: [],
+  controllers: [SwaggerController],
   providers: [
     // {
     //   provide: APP_FILTER,
