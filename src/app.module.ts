@@ -20,13 +20,28 @@ import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
 import { ReactFlowModule } from './react-flow/react-flow.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join, relative } from 'path';
 // import { LogsConfigModule } from './common/logs-config/logs-config.module';
-import { getConfig } from './config/configuration';
+import { getConfig, getEnv } from './config/configuration';
 // import { APP_FILTER } from '@nestjs/core';
 // import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
 // import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
+const environment = getEnv() ?? 'dev';
+const rootpath =
+  environment === 'dev' ? join(__dirname, '..', 'src', 'public') : '/public/';
+console.log(
+  '%c [ rootpath ]-36',
+  environment,
+  'font-size:13px; background:pink; color:#bf2c9f;',
+  rootpath,
+);
 @Module({
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: rootpath, // 静态文件所在的根目录路径
+      serveRoot: '/static', // 静态文件的路由前缀
+    }),
     TypeOrmModule.forRoot({ ...TypeOrmConfig }),
     ConfigModule.forRoot({
       isGlobal: true,

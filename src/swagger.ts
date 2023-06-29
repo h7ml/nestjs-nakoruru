@@ -1,4 +1,7 @@
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { SwaggerModule, DocumentBuilder, SwaggerCustomOptions } from '@nestjs/swagger';
+import { join, relative } from 'path';
+import { getEnv } from './config/configuration';
+import { SwaggerUIStandalonePreset } from 'swagger-ui-dist';
 
 export const generateDocument = (app) => {
   const options = new DocumentBuilder()
@@ -13,9 +16,19 @@ export const generateDocument = (app) => {
     )
     .setExternalDoc('Find out more about Nakoruru', 'https://nestjs.h7ml.cn/')
     .build();
-
+  const environment = getEnv() ?? 'dev';
+  const cssFilePath = relative(
+    __dirname,
+    join(__dirname, '.', 'static', 'css', 'theme-outline.css'),
+  );
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('/swagger', app, document, {
-    customCssUrl: '/css/theme-outline.css',
+
+  SwaggerModule.setup('/', app, document, {
+    customfavIcon: 'https://nakoruru.h7ml.cn/proxy/www.h7ml.cn/logo.png',
+    customJs: [
+      'https://nakoruru.h7ml.cn/proxy/cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.1/swagger-ui-bundle.min.js',
+      'https://nakoruru.h7ml.cn/proxy/cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.1/swagger-ui-standalone-preset.min.js',
+    ],
+    customCssUrl: ['https://nakoruru.h7ml.cn/proxy/cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.1/swagger-ui.min.css'],
   });
 };

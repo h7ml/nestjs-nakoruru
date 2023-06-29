@@ -8,6 +8,10 @@
       {
         "include": "./config/*.yaml",
         "outDir": "./dist"
+      },
+      {
+        "include": "./public/**/*",
+        "outDir": "./dist"
       }
     ]
   }
