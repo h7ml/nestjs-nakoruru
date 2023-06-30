@@ -1,0 +1,7 @@
+SERVER_VALUE:
+  host: '127.0.0.1'
+  port: 8000
+LOG_CONFIG:
+  TIMESTAMP: true
+  LOG_LEVEL: 'info'
+  LOG_ON: true

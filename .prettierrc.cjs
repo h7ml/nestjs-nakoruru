@@ -1,1 +1,1 @@
-module.exports = require('@femm/prettier')
+module.exports = require('@femm/prettier');

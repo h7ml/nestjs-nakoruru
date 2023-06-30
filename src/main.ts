@@ -1,26 +1,54 @@
 import { NestFactory } from '@nestjs/core';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { generateDocument } from './swagger';
 import { AppModule } from './app.module';
+import { ConfigEnum } from './common/enum/config.enum';
+import { ConfigService } from '@nestjs/config';
+import { join } from 'path';
+import open_url_by_browser from 'open-url-by-browser';
+
+import { VersioningType } from '@nestjs/common';
+import { TransformInterceptor } from './common/interceptors/transform.interceptor';
+declare const module: any;
+
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
+import { getEnv } from './config/configuration';
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  // const app = await NestFactory.create<NestFastifyApplication>(
+  //   AppModule,
+  //   new FastifyAdapter(),
+  // );
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter(),
+  );
+  // 统一响应体格式
+  app.useGlobalInterceptors(new TransformInterceptor());
+
+  // 接口版本化管理
+  app.enableVersioning({ type: VersioningType.URI });
   app.setGlobalPrefix('api');
-
-  const options = new DocumentBuilder()
-    .setTitle('Nakoruru Backend API')
-    .setDescription('The Nakoruru Backend API description by h7ml')
-    .setVersion('0.0.1')
-    .setTermsOfService('https://nestjs.h7ml.cn/')
-    .setContact('Contact Name', 'http://github.com/h7ml', 'h7ml@qq.com')
-    .setLicense(
-      'Apache-2.0',
-      'https://github.com/h7ml/nestjs-nakoruru/blob/master/license',
-    )
-    .setExternalDoc('Find out more about Nakoruru', 'https://nestjs.h7ml.cn/')
-    .build();
-
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('swagger', app, document);
-
-  await app.listen(3000);
+  // const cssFilePath = join(__dirname, '.', 'src', 'public');
+  // app.useStaticAssets({
+  //   root: cssFilePath,
+  //   prefix: '/',
+  // });
+  generateDocument(app);
+  // 热重载
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
+  const configService = app.get(ConfigService);
+  const serverValue = configService.get(ConfigEnum.SERVER_VALUE);
+  await app.listen(serverValue.port, serverValue.host);
+  const environment = getEnv() ?? 'dev';
+  // if (environment === 'dev')
+  //   open_url_by_browser(
+  //     `http://${serverValue.host}:${serverValue.port}`,
+  //     'chrome',
+  //   );
 }
 bootstrap();

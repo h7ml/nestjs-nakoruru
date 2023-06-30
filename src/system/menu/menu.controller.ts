@@ -22,9 +22,9 @@ export class MenuController {
   @ApiOperation({ summary: '获取所有菜单' })
   @ApiResponse({ status: 200, description: '获取成功' })
   @ApiResponse({ status: 500, description: '获取失败' })
-  findAll() {
+  async findAll() {
     try {
-      const data = this.menuService.findAll();
+      const data = await this.menuService.findAll();
       return {
         code: 200,
         message: '获取成功',
@@ -40,13 +40,13 @@ export class MenuController {
   @ApiOperation({ summary: '获取单个菜单' })
   @ApiResponse({ status: 200, description: '获取成功' })
   @ApiResponse({ status: 500, description: '获取失败' })
-  findOne(@Param('id') id: number) {
+  async findOne(@Param('id') id: number) {
     try {
-      const data = this.menuService.findOne(id);
+      // const data = await this.menuService.findOne(id);
       return {
         code: 200,
         message: '获取成功',
-        data,
+        data: [],
       };
     } catch (error) {
       throw new HttpException('获取失败', HttpStatus.INTERNAL_SERVER_ERROR);
@@ -57,9 +57,9 @@ export class MenuController {
   @ApiOperation({ summary: '创建新菜单' })
   @ApiResponse({ status: 201, description: '创建成功' })
   @ApiResponse({ status: 500, description: '创建失败' })
-  create(@Body() menu: Menu) {
+  async create(@Body() menu: Menu) {
     try {
-      this.menuService.create(menu);
+      await this.menuService.create(menu);
       return {
         code: 201,
         message: '创建成功',
@@ -73,9 +73,9 @@ export class MenuController {
   @ApiOperation({ summary: '更新菜单' })
   @ApiResponse({ status: 200, description: '更新成功' })
   @ApiResponse({ status: 500, description: '更新失败' })
-  update(@Param('id') id: number, @Body() menu: Menu) {
+  async update(@Param('id') id: number, @Body() menu: Menu) {
     try {
-      this.menuService.update(id, menu);
+      await this.menuService.update(id, menu);
       return {
         code: 200,
         message: '更新成功',
@@ -89,9 +89,9 @@ export class MenuController {
   @ApiOperation({ summary: '删除菜单' })
   @ApiResponse({ status: 200, description: '删除成功' })
   @ApiResponse({ status: 500, description: '删除失败' })
-  delete(@Param('id') id: number) {
+  async delete(@Param('id') id: number) {
     try {
-      this.menuService.delete(id);
+      await this.menuService.delete(id);
       return {
         code: 200,
         message: '删除成功',

@@ -1,53 +1,38 @@
 import { Injectable } from '@nestjs/common';
-import * as Mock from 'mockjs';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { Menu } from './menu.entity';
 
 @Injectable()
 export class MenuService {
-  private readonly menus: Menu[];
+  constructor(
+    @InjectRepository(Menu)
+    private readonly menuRepository: Repository<Menu>,
+  ) {}
 
-  constructor() {
-    this.menus = Mock.mock({
-      'menus|5-10': [
-        {
-          'id|+1': 1,
-          title: '@ctitle',
-          path: '@word',
-          icon: '@word',
-          'parentId|0-3': 0,
-          'children|0-3': [
-            {
-              'id|+1': 100,
-              title: '@ctitle',
-              path: '@word',
-              icon: '@word',
-              'parentId|0-3': 0,
-            },
-          ],
-        },
-      ],
-    }).menus;
+  async findAll(): Promise<Menu[]> {
+    const info = this.menuRepository.find();
+    // console.log(
+    //   '%c [ info ]-15',
+    //   'font-size:13px; background:pink; color:#bf2c9f;',
+    //   info,
+    // );
+    return info;
   }
 
-  findAll(): Menu[] {
-    return this.menus;
+  // async findOne(id?: number): Promise<Menu> {
+  //   return this.menuRepository.findOne();
+  // }
+
+  async create(menu: Menu): Promise<Menu> {
+    return this.menuRepository.save(menu);
   }
 
-  findOne(id: number): Menu {
-    return this.menus.find((menu) => menu.id === id);
+  async update(id: number, updatedMenu: Menu): Promise<void> {
+    await this.menuRepository.update(id, updatedMenu);
   }
 
-  create(menu: Menu): void {
-    this.menus.push(menu);
-  }
-
-  update(id: number, updatedMenu: Menu): void {
-    const menu = this.menus.find((menu) => menu.id === id);
-    Object.assign(menu, updatedMenu);
-  }
-
-  delete(id: number): void {
-    const menuIndex = this.menus.findIndex((menu) => menu.id === id);
-    this.menus.splice(menuIndex, 1);
+  async delete(id: number): Promise<void> {
+    await this.menuRepository.delete(id);
   }
 }

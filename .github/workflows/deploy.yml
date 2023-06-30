@@ -51,7 +51,7 @@ jobs:
           # vercel-args: '--prod' #Optional
           # github-token: ${{ secrets.GIT_TOKEN }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      - name: Deploy to Vercel 🚀
+      - name: Deploy to nestjs.h7ml.cn 🚀
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
