@@ -167,7 +167,7 @@ async function generateReadme(data: any): Promise<string> {
     const articles = data[source];
     readme += `### ${source}🔍\n\n`;
     readme += `<details>\n\n`;
-    readme += `<summary> #### ${source} 🔍 </summary>\n\n`;
+    readme += `<summary> ${source} 🔍 </summary>\n\n`;
     readme += `<ol>\n`;
     articles.forEach((article) => {
       readme += `<li>\n`;
@@ -178,13 +178,16 @@ async function generateReadme(data: any): Promise<string> {
     readme += `</details>\n\n`;
   }
 
-  readme += `<details>
-    <summary> ## Metrics and Statistics 📈 </summary>
+  readme += `
+<details>
 
-    ![Metrics](https://metrics.lecoq.io/h7ml?template=classic&base.repositories=0&isocalendar=1&languages=1&followup=1&people=1&code=1&notable=1&discussions=1&lines=1&repositories=1&introduction=1&gists=1&tweets=1&base.indepth=false&base.hireable=false&repositories=100&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&isocalendar.duration=half-year&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&followup.sections=repositories&followup.indepth=false&followup.archived=true&people.limit=24&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&code.lines=12&code.load=400&code.days=3&code.visibility=public&notable.from=organization&notable.repositories=false&notable.indepth=false&notable.types=commit&discussions.categories=true&discussions.categories.limit=0&repositories.pinned=0&introduction.title=true&tweets.user=.user.twitter&tweets.attachments=false&tweets.limit=2&config.timezone=Asia%2FShanghai)
-    </details>
+<summary> ## Metrics and Statistics 📈 </summary>
 
-    ##### this is generate Readme.md by [nestjs-nakoruru](https://github.com/h7ml/nestjs-nakoruru) domain: https://nestjs.h7ml.cn author: h7ml
+![Metrics](https://metrics.lecoq.io/h7ml?template=classic&base.repositories=0&isocalendar=1&languages=1&followup=1&people=1&code=1&notable=1&discussions=1&lines=1&repositories=1&introduction=1&gists=1&tweets=1&base.indepth=false&base.hireable=false&repositories=100&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&isocalendar.duration=half-year&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&followup.sections=repositories&followup.indepth=false&followup.archived=true&people.limit=24&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&code.lines=12&code.load=400&code.days=3&code.visibility=public&notable.from=organization&notable.repositories=false&notable.indepth=false&notable.types=commit&discussions.categories=true&discussions.categories.limit=0&repositories.pinned=0&introduction.title=true&tweets.user=.user.twitter&tweets.attachments=false&tweets.limit=2&config.timezone=Asia%2FShanghai)
+
+</details>
+
+##### this is generate Readme.md by [nestjs-nakoruru](https://github.com/h7ml/nestjs-nakoruru) domain: https://nestjs.h7ml.cn author: h7ml
     `;
 
   return readme;
