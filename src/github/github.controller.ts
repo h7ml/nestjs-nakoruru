@@ -81,7 +81,6 @@ export class GithubController {
       'toutiao',
       'sspai',
       'v2ex',
-      'douban',
     ];
     const info: Record<Source, Article> = await generateHotList(hotList);
     const md = await generateReadme(info);
