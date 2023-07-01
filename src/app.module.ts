@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { APP_FILTER } from '@nestjs/core';
+import { join } from 'path';
 import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
 import { HupuModule } from './hotapi/hupu/hupu.module';
@@ -21,18 +23,18 @@ import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
 import { ReactFlowModule } from './react-flow/react-flow.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join, relative } from 'path';
-// import { LogsConfigModule } from './common/logs-config/logs-config.module';
-import { getConfig, getEnv } from './config/configuration';
-// import { APP_FILTER } from '@nestjs/core';
-// import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
-// import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
+import { LogsConfigModule } from './common/logs-config/logs-config.module';
+import { getConfig } from './config/configuration';
+import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
+import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
 import { SwaggerModule } from './swagger/swagger.module';
 import { GithubModule } from './github/github.module';
-const environment = getEnv() ?? 'dev';
-const rootpath =
-  environment === 'dev' ? join(__dirname, '..', 'src', 'public') : '/public/';
+
+const environment = process.env.RUNNING_ENV === 'dev';
+const rootpath = environment
+  ? join(__dirname, '..', 'src', 'public')
+  : '/public/';
+
 @Module({
   imports: [
     ServeStaticModule.forRoot({
@@ -45,7 +47,7 @@ const rootpath =
       ignoreEnvFile: true,
       load: [getConfig],
     }),
-    // LogsConfigModule,
+    environment ? LogsConfigModule : null,
     UserModule,
     MenuModule,
     JuejinModule,
@@ -68,15 +70,17 @@ const rootpath =
     GithubModule,
   ],
   controllers: [],
-  providers: [
-    // {
-    //   provide: APP_FILTER,
-    //   useClass: AllExceptionsFilter,
-    // },
-    // {
-    //   provide: APP_FILTER,
-    //   useClass: HttpExceptionFilter,
-    // },
-  ],
+  providers: environment
+    ? [
+        {
+          provide: APP_FILTER,
+          useClass: AllExceptionsFilter,
+        },
+        {
+          provide: APP_FILTER,
+          useClass: HttpExceptionFilter,
+        },
+      ]
+    : [],
 })
 export class AppModule {}

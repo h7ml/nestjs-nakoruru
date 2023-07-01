@@ -4,6 +4,6 @@ import { SwaggerService } from './swagger.service';
 
 @Module({
   controllers: [SwaggerController],
-  providers: [SwaggerService]
+  providers: [SwaggerService],
 })
 export class SwaggerModule {}

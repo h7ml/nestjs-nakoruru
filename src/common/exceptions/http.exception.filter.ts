@@ -1,19 +1,3 @@
-/**
- * @author        h7ml <h7ml@qq.com>
- * @date          2023-06-11 22:48:55
- * @lastModified  2023-06-11 22:48:55
- * Copyright © www.h7ml.cn All rights reserved
- */
-/*
- * @Author: h7ml <h7ml@qq.com>
- * @Date: 2023-06-11 22:48:55
- * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-12 23:12:21
- * @FilePath: \nestjs-nakoruru\src\common\exceptions\http.exception.filter.ts
- * @Description:
- *
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
- */
 import { FastifyReply, FastifyRequest } from 'fastify';
 import {
   ExceptionFilter,
@@ -47,16 +31,16 @@ export class HttpExceptionFilter implements ExceptionFilter {
     this.Logger.error('params:' + JSON.stringify(request.params));
     this.Logger.error('headers:' + JSON.stringify(request.headers));
 
-    // 处理业务异常
     if (exception instanceof BusinessException) {
       const error = exception.getResponse();
-      response.status(HttpStatus.OK).send({
+
+      response.status(status).send({
         response: null,
         responseTime: new Date(),
         status: error['code'],
         message: error['message'],
         success: false,
-      });
+      } as never);
       return;
     }
 
@@ -67,14 +51,14 @@ export class HttpExceptionFilter implements ExceptionFilter {
         timestamp: new Date().toISOString(),
         path: request.url,
         message: exception.getResponse(),
-      });
+      } as never);
     } else {
       response.status(status).send({
         statusCode: status,
         timestamp: new Date().toISOString(),
         path: request.url,
-        ...(exception.getResponse() as any),
-      });
+        ...(exResponse as Record<string, any>),
+      } as never);
     }
   }
 }

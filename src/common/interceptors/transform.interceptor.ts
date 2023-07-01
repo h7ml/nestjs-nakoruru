@@ -29,7 +29,8 @@ interface Response<T> {
 
 @Injectable()
 export class TransformInterceptor<T>
-  implements NestInterceptor<T, Response<T>> {
+  implements NestInterceptor<T, Response<T>>
+{
   private readonly whitelist: string[] = [
     '/api/swagger-json',
     '/api/github',
