@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { generateDocument } from './swagger';
+import { generateDocument } from './swagger/swagger';
 import { AppModule } from './app.module';
 import { ConfigEnum } from './common/enum/config.enum';
 import { ConfigService } from '@nestjs/config';
@@ -51,4 +51,6 @@ async function bootstrap() {
   //     'chrome',
   //   );
 }
-bootstrap();
+bootstrap().then(() => {
+  console.log(`server is running: http://localhost:8000`);
+});

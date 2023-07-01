@@ -7,7 +7,7 @@ import { WeiboService } from './weibo.service';
 export class WeiboController {
   constructor(private readonly weiboService: WeiboService) {}
 
-  @Get('/weibo')
+  @Get('/')
   @ApiOperation({ summary: '获取微博热搜' })
   @ApiResponse({ status: 200, description: '获取成功' })
   async getWeibo() {
@@ -18,7 +18,7 @@ export class WeiboController {
     }
   }
 
-  @Get('/weibo/new')
+  @Get('/new')
   @ApiOperation({ summary: '获取微博热搜 - 最新数据' })
   @ApiResponse({ status: 200, description: '获取成功' })
   async getNewWeibo() {

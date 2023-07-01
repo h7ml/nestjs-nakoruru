@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SwaggerController } from './swagger.controller';
 
 import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
@@ -29,6 +28,8 @@ import { getConfig, getEnv } from './config/configuration';
 // import { APP_FILTER } from '@nestjs/core';
 // import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
 // import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
+import { SwaggerModule } from './swagger/swagger.module';
+import { GithubModule } from './github/github.module';
 const environment = getEnv() ?? 'dev';
 const rootpath =
   environment === 'dev' ? join(__dirname, '..', 'src', 'public') : '/public/';
@@ -63,8 +64,10 @@ const rootpath =
     HupuModule,
     OrderModule,
     ReactFlowModule,
+    SwaggerModule,
+    GithubModule,
   ],
-  controllers: [SwaggerController],
+  controllers: [],
   providers: [
     // {
     //   provide: APP_FILTER,

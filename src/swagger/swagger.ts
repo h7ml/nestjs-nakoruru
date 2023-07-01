@@ -4,8 +4,8 @@ import {
   SwaggerCustomOptions,
 } from '@nestjs/swagger';
 import { join, relative } from 'path';
-import { getEnv } from './config/configuration';
-import { SwaggerUIStandalonePreset } from 'swagger-ui-dist';
+import { getEnv } from '../config/configuration';
+import { writeFileSync } from 'fs';
 
 export const generateDocument = (app) => {
   const options = new DocumentBuilder()
@@ -20,13 +20,16 @@ export const generateDocument = (app) => {
     )
     .setExternalDoc('Find out more about Nakoruru', 'https://nestjs.h7ml.cn/')
     .build();
-  const environment = getEnv() ?? 'dev';
-  const cssFilePath = relative(
-    __dirname,
-    join(__dirname, '.', 'static', 'css', 'theme-outline.css'),
-  );
+  const environment = process.env.RUNNING_ENV === 'dev';
   const document = SwaggerModule.createDocument(app, options);
-
+  if (environment) {
+    console.log(
+      `this is ${getEnv()} environment SwaggerModule.createDocument `,
+    );
+    const filePath = join(__dirname, '../', 'public', 'swagger.json');
+    writeFileSync(filePath, JSON.stringify(document, null, 2));
+    console.log(`write swagger.json to ${filePath}`);
+  }
   SwaggerModule.setup('/', app, document, {
     customfavIcon: 'https://nakoruru.h7ml.cn/proxy/www.h7ml.cn/logo.png',
     customJs: [

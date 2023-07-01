@@ -4,7 +4,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Douban } from './douban-item.model';
 
 @ApiTags('douban')
-@Controller('iotapi/douban')
+@Controller('hotapi/douban')
 export class DoubanController {
   constructor(private doubanService: DoubanService) {}
 

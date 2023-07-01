@@ -8,7 +8,7 @@ import { ThePaperService } from './thepaper.service';
 export class ThePaperController {
   constructor(private readonly thePaperService: ThePaperService) {}
 
-  @Get('/thepaper')
+  @Get('/')
   @ApiOperation({ summary: '获取澎湃热榜' })
   @ApiResponse({ status: 200, description: '获取成功' })
   async getThePaper() {
@@ -19,7 +19,7 @@ export class ThePaperController {
     }
   }
 
-  @Get('/thepaper/new')
+  @Get('/new')
   @ApiOperation({ summary: '获取澎湃热榜 - 最新数据' })
   @ApiResponse({ status: 200, description: '获取成功' })
   async getNewThePaper() {

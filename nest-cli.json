@@ -10,6 +10,14 @@
         "outDir": "./dist"
       },
       {
+        "include": "./**/*.template",
+        "outDir": "./dist"
+      },
+      {
+        "include": "./**/*.md",
+        "outDir": "./dist"
+      },
+      {
         "include": "./public/**/*",
         "outDir": "./dist"
       }
