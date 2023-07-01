@@ -11,7 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Cache Docker images.
+        uses: ScribeMD/docker-cache@0.2.6
+        with:
+          key: docker-nestjs-nakoruru
       - name: Set tag
         id: tag
         run: |
