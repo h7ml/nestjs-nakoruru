@@ -1,6 +1,10 @@
 {
   "version": 2,
   "name": "nestjs-nakoruru",
+  "public": true,
+  "env": {
+    "RUNNING_ENV": "prod"
+  },
   "builds": [
     {
       "src": "dist/main.js",

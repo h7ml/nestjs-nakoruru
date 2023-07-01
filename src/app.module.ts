@@ -23,10 +23,10 @@ import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
 import { ReactFlowModule } from './react-flow/react-flow.module';
-import { LogsConfigModule } from './common/logs-config/logs-config.module';
+// import { LogsConfigModule } from './common/logs-config/logs-config.module';;
+// import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
+// import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
 import { getConfig } from './config/configuration';
-import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
-import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
 import { SwaggerModule } from './swagger/swagger.module';
 import { GithubModule } from './github/github.module';
 
@@ -47,7 +47,7 @@ const rootpath = environment
       ignoreEnvFile: true,
       load: [getConfig],
     }),
-    environment ? LogsConfigModule : null,
+    // environment ? LogsConfigModule : null,
     UserModule,
     MenuModule,
     JuejinModule,
@@ -70,17 +70,17 @@ const rootpath = environment
     GithubModule,
   ],
   controllers: [],
-  providers: environment
-    ? [
-        {
-          provide: APP_FILTER,
-          useClass: AllExceptionsFilter,
-        },
-        {
-          provide: APP_FILTER,
-          useClass: HttpExceptionFilter,
-        },
-      ]
-    : [],
+  // providers: environment
+  //   ? [
+  //       {
+  //         provide: APP_FILTER,
+  //         useClass: AllExceptionsFilter,
+  //       },
+  //       {
+  //         provide: APP_FILTER,
+  //         useClass: HttpExceptionFilter,
+  //       },
+  //     ]
+  //   : [],
 })
 export class AppModule {}
