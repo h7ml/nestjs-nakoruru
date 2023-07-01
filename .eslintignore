@@ -37,5 +37,6 @@ lerna-debug.log*
 vercel.json
 package.json
 package-lock.json
+pnpm-lock.yaml
 yarn.lock
 README.md
