@@ -3,6 +3,7 @@ import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ToutiaoService } from './toutiao.service';
 
 @Controller('hotapi/toutiao')
+@ApiTags('hotapi')
 @ApiTags('今日头条')
 export class ToutiaoController {
   constructor(private readonly toutiaoService: ToutiaoService) {}

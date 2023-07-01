@@ -3,6 +3,7 @@ import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { NewsqqService } from './newsqq.service';
 
 @Controller('hotapi/newsqq')
+@ApiTags('hotapi')
 @ApiTags('腾讯新闻')
 export class NewsqqController {
   constructor(private readonly newsqqService: NewsqqService) {}

@@ -8,7 +8,6 @@ import { V2exModule } from './hotapi/v2ex/v2ex.module';
 import { DoubanModule } from './hotapi/douban/douban.module';
 import { HupuModule } from './hotapi/hupu/hupu.module';
 import { TypeOrmConfig } from './config';
-import { OrderModule } from './order/order.module';
 import { UserModule } from './system/user/user.module';
 import { MenuModule } from './system/menu/menu.module';
 import { JuejinModule } from './hotapi/juejin/juejin.module';
@@ -65,7 +64,6 @@ const rootpath = environment
     V2exModule,
     DoubanModule,
     HupuModule,
-    OrderModule,
     ReactFlowModule,
     SwaggerModule,
     GithubModule,

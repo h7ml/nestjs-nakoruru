@@ -2,8 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { DoubanService } from './douban.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Douban } from './douban-item.model';
-
-@ApiTags('douban')
+@ApiTags('hotapi')
 @Controller('hotapi/douban')
 export class DoubanController {
   constructor(private doubanService: DoubanService) {}

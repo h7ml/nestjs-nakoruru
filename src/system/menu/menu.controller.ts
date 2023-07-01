@@ -14,6 +14,7 @@ import { Menu } from './menu.entity';
 import { MenuService } from './menu.service';
 
 @ApiTags('system')
+@ApiTags('hotapi')
 @Controller('system/menu')
 export class MenuController {
   constructor(private readonly menuService: MenuService) {}

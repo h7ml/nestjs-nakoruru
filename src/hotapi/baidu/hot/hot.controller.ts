@@ -2,7 +2,7 @@ import { Controller, Get, Query } from '@nestjs/common';
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { HotService } from './hot.service';
 
-@ApiTags('百度开发者热搜')
+@ApiTags('hotapi')
 @Controller('hotapi/baidu/hot')
 export class HotController {
   constructor(private readonly hotService: HotService) {}

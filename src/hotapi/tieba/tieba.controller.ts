@@ -2,8 +2,8 @@ import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
 import { TiebaService } from './tieba.service';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('百度贴吧')
 @Controller('hotapi/tieba')
+@ApiTags('hotapi')
 export class TiebaController {
   constructor(private readonly tiebaService: TiebaService) {}
 

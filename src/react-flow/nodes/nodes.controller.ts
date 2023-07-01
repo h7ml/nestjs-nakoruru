@@ -3,7 +3,8 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Node } from './node.interface';
 import { NodesService } from './nodes.service';
 
-@ApiTags('react flow nodes')
+@ApiTags('react flow ')
+@ApiTags('hotapi')
 @Controller('react-flow/nodes')
 export class NodesController {
   constructor(private readonly nodesService: NodesService) {}

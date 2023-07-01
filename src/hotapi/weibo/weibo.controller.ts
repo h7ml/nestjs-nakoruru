@@ -2,7 +2,7 @@ import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { WeiboService } from './weibo.service';
 
-@ApiTags('微博')
+@ApiTags('hotapi')
 @Controller('hotapi/weibo')
 export class WeiboController {
   constructor(private readonly weiboService: WeiboService) {}

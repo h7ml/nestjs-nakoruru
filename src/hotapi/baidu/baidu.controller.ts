@@ -8,6 +8,7 @@ interface BaiduResponse {
   }[];
 }
 
+@ApiTags('hotapi')
 @ApiTags('百度热搜')
 @Controller('hotapi/baidu')
 export class BaiduController {

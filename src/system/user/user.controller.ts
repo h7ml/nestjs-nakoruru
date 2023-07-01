@@ -14,6 +14,7 @@ import { User } from './user.entity';
 import { UserService } from './user.service';
 
 @ApiTags('system')
+@ApiTags('hotapi')
 @Controller('system/users')
 export class UserController {
   constructor(private readonly userService: UserService) {}

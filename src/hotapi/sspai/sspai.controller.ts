@@ -4,6 +4,7 @@ import axios from 'axios';
 import { SspaiService } from './sspai.service';
 
 @Controller('hotapi/sspai')
+@ApiTags('hotapi')
 @ApiTags('少数派')
 export class SspaiController {
   constructor(private readonly sspaiService: SspaiService) {}

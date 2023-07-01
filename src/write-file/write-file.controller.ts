@@ -8,11 +8,17 @@ import {
 } from '@nestjs/common';
 import { join } from 'path';
 import { createWriteStream } from 'fs';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiExcludeEndpoint,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
 @ApiTags('write-file')
 @Controller('/write-file')
 export class WriteFileController {
+  @ApiExcludeEndpoint()
   @Post(':filename')
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({ summary: '写入文件' })

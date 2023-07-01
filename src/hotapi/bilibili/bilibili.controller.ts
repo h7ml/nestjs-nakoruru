@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { BilibiliService } from './bilibili.service';
 
-@ApiTags('哔哩哔哩')
+@ApiTags('hotapi')
 @Controller('hotapi/bilibili')
 export class BilibiliController {
   // 注入哔哩哔哩服务

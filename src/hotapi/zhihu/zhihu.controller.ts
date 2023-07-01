@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { ZhihuService } from './zhihu.service';
 import { ApiResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('知乎')
+@ApiTags('hotapi')
 @Controller('hotapi/zhihu')
 export class ZhihuController {
   constructor(private readonly zhihuService: ZhihuService) {}

@@ -42,7 +42,7 @@ enum SinceOption {
   WEEKLY = 'WEEKLY',
 }
 
-@ApiTags('百度开发者github')
+@ApiTags('hotapi')
 @Controller('hotapi/baidu/github')
 export class GithubController {
   constructor(private readonly githubService: GithubService) {}

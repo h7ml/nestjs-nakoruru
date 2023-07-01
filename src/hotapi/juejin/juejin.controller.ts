@@ -8,7 +8,7 @@ interface JuejinResponse {
   };
 }
 
-@ApiTags('稀土掘金')
+@ApiTags('hotapi')
 @Controller('hotapi/juejin')
 export class JuejinController {
   private readonly url =
