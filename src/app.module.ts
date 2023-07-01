@@ -29,6 +29,7 @@ import { ReactFlowModule } from './react-flow/react-flow.module';
 import { getConfig } from './config/configuration';
 import { SwaggerModule } from './swagger/swagger.module';
 import { GithubModule } from './github/github.module';
+import { WriteFileModule } from './write-file/write-file.module';
 
 const environment = process.env.RUNNING_ENV === 'dev';
 const rootpath = environment
@@ -68,6 +69,7 @@ const rootpath = environment
     ReactFlowModule,
     SwaggerModule,
     GithubModule,
+    WriteFileModule,
   ],
   controllers: [],
   // providers: environment

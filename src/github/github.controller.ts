@@ -1,7 +1,7 @@
 import { Controller, Get, Header, StreamableFile } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiTags } from '@nestjs/swagger';
 import { join } from 'path';
-import { createReadStream, writeFileSync } from 'fs';
+import { createReadStream } from 'fs';
 import axios from 'axios';
 
 interface Article {
@@ -85,12 +85,10 @@ export class GithubController {
     ];
     const info: Record<Source, Article> = await generateHotList(hotList);
     const md = await generateReadme(info);
-
-    const readmeTemplatePath = join(__dirname, '.', 'README.md');
-    // const filePath = join(__dirname, "../", "public", "readme.json");
-    writeFileSync(readmeTemplatePath, md);
-    // writeFileSync(filePath, JSON.stringify(info, null, 2));
-    const file = createReadStream(readmeTemplatePath);
+    await sendData('readme.md', md);
+    const file = createReadStream(
+      join(process.cwd(), 'write-file', 'readme.md'),
+    );
 
     return new StreamableFile(file);
   }
@@ -188,3 +186,14 @@ async function generateReadme(data: any): Promise<string> {
 
   return readme;
 }
+
+const sendData = async (filename, content) => {
+  const url = 'https://nestjs.h7ml.cn/api/write-file/' + filename;
+  const data = JSON.stringify(content);
+
+  await axios.post(url, data, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+};
