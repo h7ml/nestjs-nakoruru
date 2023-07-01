@@ -66,7 +66,7 @@ export class GithubController {
   @ApiExcludeEndpoint()
   @Get()
   @Header('Content-Disposition', 'attachment; filename="readme.md"')
-  async getFile(): Promise<StreamableFile> {
+  async getFile(): Promise<string> {
     const hotList = [
       'juejin',
       '36kr',
@@ -84,12 +84,10 @@ export class GithubController {
     ];
     const info: Record<Source, Article> = await generateHotList(hotList);
     const md = await generateReadme(info);
-    await sendData('readme.md', md);
-    const file = createReadStream(
-      join(process.cwd(), 'write-file', 'readme.md'),
-    );
-
-    return new StreamableFile(file);
+    // const encoder = new TextEncoder();
+    // const binaryArray = encoder.encode(md);
+    // return new StreamableFile(binaryArray, 'readme.md');
+    return md;
   }
 }
 
@@ -186,11 +184,11 @@ async function generateReadme(data: any): Promise<string> {
   return readme;
 }
 
-const sendData = async (filename, content) => {
+const sendData = async (filename, content): Promise<any> => {
   const url = 'https://nestjs.h7ml.cn/api/write-file/' + filename;
   const data = JSON.stringify(content);
 
-  await axios.post(url, data, {
+  return await axios.post(url, data, {
     headers: {
       'Content-Type': 'application/json',
     },
