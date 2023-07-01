@@ -70,18 +70,18 @@ export class GithubController {
   async getFile(): Promise<string> {
     const hotList = [
       'juejin',
-      '36kr',
-      'baidu',
-      'baidu/hot',
-      'baidu/github',
-      'bilibili',
-      'zhihu',
-      'tieba',
-      'weibo',
-      'newsqq',
-      'toutiao',
-      'sspai',
-      'v2ex',
+      // '36kr',
+      // 'baidu',
+      // 'baidu/hot',
+      // 'baidu/github',
+      // 'bilibili',
+      // 'zhihu',
+      // 'tieba',
+      // 'weibo',
+      // 'newsqq',
+      // 'toutiao',
+      // 'sspai',
+      // 'v2ex',
     ];
     const info: Record<Source, Article> = await generateHotList(hotList);
     const md = await generateReadme(info);
@@ -158,8 +158,8 @@ async function generateReadme(data: any): Promise<string> {
     '\n' +
     '**CodeTime: ⏱️**\n' +
     '<details>\n' +
-    '<summary>⌛ Weekly development breakdown</summary>\n\n' +
-    '![wakatime](https://wakatime.com/share/@78c90c00-b60a-4b53-aca3-cdaada528717/e2a927a0-e579-4e6e-98cb-d769bbc3de2c.png)\n' +
+    '<summary>Weekly development breakdown ⌛ </summary>\n\n' +
+    '![wakatime](https://wakatime.com/share/@78c90c00-b60a-4b53-aca3-cdaada528717/e2a927a0-e579-4e6e-98cb-d769bbc3de2c.png)\n\n' +
     '</details>\n' +
     '\n';
 
@@ -184,10 +184,10 @@ async function generateReadme(data: any): Promise<string> {
 
   readme +=
     '<details>\n' +
-    '<summary>📈 Metrics and Statistics</summary>\n\n' +
+    '<summary>Metrics and Statistics 📈 </summary>\n\n' +
     '![Metrics](https://metrics.lecoq.io/h7ml?template=classic&base.repositories=0&isocalendar=1&languages=1&followup=1&people=1&code=1&notable=1&discussions=1&lines=1&repositories=1&introduction=1&gists=1&tweets=1&base.indepth=false&base.hireable=false&repositories=100&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&isocalendar.duration=half-year&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&followup.sections=repositories&followup.indepth=false&followup.archived=true&people.limit=24&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&code.lines=12&code.load=400&code.days=3&code.visibility=public&notable.from=organization&notable.repositories=false&notable.indepth=false&notable.types=commit&discussions.categories=true&discussions.categories.limit=0&repositories.pinned=0&introduction.title=true&tweets.user=.user.twitter&tweets.attachments=false&tweets.limit=2&config.timezone=Asia%2FShanghai)\n' +
-    '</details>\n' +
-    'this is generate Readme.md by [nestjs-nakoruru](https://github.com/h7ml/nestjs-nakoruru) domain: https://nestjs.h7ml.cn\n author: h7ml\n ';
+    '</details>\n\n' +
+    '##### this is generate Readme.md by [nestjs-nakoruru](https://github.com/h7ml/nestjs-nakoruru) domain: https://nestjs.h7ml.cn\n author: h7ml\n ';
 
   return readme;
 }
