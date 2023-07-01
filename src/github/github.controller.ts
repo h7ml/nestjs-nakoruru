@@ -162,11 +162,11 @@ async function generateReadme(data: any): Promise<string> {
   ![wakatime](https://wakatime.com/share/@78c90c00-b60a-4b53-aca3-cdaada528717/e2a927a0-e579-4e6e-98cb-d769bbc3de2c.png)
   </details>`;
 
-  readme += '##  全网热搜 🔥\n\n';
+  readme += '##  hotapi 🔥\n\n';
   for (const source in data) {
     const articles = data[source];
     readme += `### ${source}🔍\n\n`;
-    readme += `<details>\n`;
+    readme += `<details>\n\n`;
     readme += `<summary> #### ${source} 🔍 </summary>\n\n`;
     readme += `<ol>\n`;
     articles.forEach((article) => {
