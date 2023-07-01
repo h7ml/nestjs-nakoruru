@@ -158,7 +158,7 @@ async function generateReadme(data: any): Promise<string> {
     '\n' +
     '![wakatime](https://wakatime.com/share/@78c90c00-b60a-4b53-aca3-cdaada528717/e2a927a0-e579-4e6e-98cb-d769bbc3de2c.png)' +
     '\n' +
-    '![CodeTime](https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D3645%26project%3D%26in%3D0)';
+    '![CodeTime](https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D3645%26project%3D%26in%3D0)\n';
 
   readme += '# 全网热搜\n\n';
   for (const source in data) {
@@ -168,13 +168,13 @@ async function generateReadme(data: any): Promise<string> {
     readme += `<details>\n`;
     readme += `<summary>${source}</summary>\n\n`;
 
-    // readme += `<ol>\n`;
-    articles.forEach((article, index) => {
-      // readme += `<li>\n`;
-      readme += `${index} -[${article.title}](${article.url})\n`;
-      // readme += `</li>\n`;
+    readme += `<ol>\n`;
+    articles.forEach((article) => {
+      readme += `<li>\n`;
+      readme += `[${article.title}](${article.url})\n`;
+      readme += `</li>\n`;
     });
-    // readme += `</ol>\n`;
+    readme += `</ol>\n`;
 
     readme += `</details>\n\n`;
   }
