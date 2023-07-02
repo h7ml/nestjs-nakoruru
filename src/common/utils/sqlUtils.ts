@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-07-02 23:36:16
- * @lastModified  2023-07-02 23:36:16
+ * @lastModified  2023-07-03 04:28:23
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-02 23:36:16
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-02 23:57:33
+ * @LastEditTime: 2023-07-03 04:28:23
  * @FilePath: \src\common\utils\sqlUtils.ts
  * @Description: 封装postgresql数据库操作
  *
@@ -43,10 +43,20 @@ export async function findOne(
 export async function findAll(
   table: string,
   conditions: string,
-  params: any[] = [],
 ): Promise<any[]> {
-  const query: any = `SELECT * FROM ${table} WHERE ${conditions}`;
-  const { rows } = await sql<[any]>(query, ...params);
+  console.log(
+    '%c [ conditions ]-46',
+    'font-size:13px; background:pink; color:#bf2c9f;',
+    conditions,
+  );
+  console.log(
+    '%c [ table ]-45',
+    'font-size:13px; background:pink; color:#bf2c9f;',
+    table,
+  );
+  // const query: any = sql`SELECT * FROM ${table} WHERE ${conditions}`;
+  const { rows } = await sql`SELECT * FROM ${table} WHERE ${conditions}`;
+
   return rows;
 }
 

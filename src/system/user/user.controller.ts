@@ -1,81 +1,59 @@
 import {
-  Body,
   Controller,
-  Delete,
   Get,
-  HttpCode,
-  HttpStatus,
-  Param,
   Post,
-  Put,
+  Body,
+  Patch,
+  Param,
+  Delete,
 } from '@nestjs/common';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { User } from './user.entity';
 import { UserService } from './user.service';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @ApiTags('system')
-@ApiTags('hotapi')
-@Controller('system/users')
+@Controller('system/user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
+
+  @Post()
+  @ApiOperation({ summary: '创建新用户' })
+  @ApiResponse({ status: 201, description: '创建成功' })
+  @ApiResponse({ status: 500, description: '创建失败' })
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.userService.create(createUserDto);
+  }
 
   @Get()
   @ApiOperation({ summary: '获取所有用户' })
   @ApiResponse({ status: 200, description: '获取成功' })
   @ApiResponse({ status: 500, description: '获取失败' })
   findAll() {
-    return {
-      statusCode: HttpStatus.OK,
-      data: this.userService.findAll(),
-    };
+    return this.userService.findAll();
   }
 
   @Get(':id')
   @ApiOperation({ summary: '获取单个用户' })
   @ApiResponse({ status: 200, description: '获取成功' })
   @ApiResponse({ status: 500, description: '获取失败' })
-  findOne(@Param('id') id: number) {
-    return {
-      statusCode: HttpStatus.OK,
-      data: this.userService.findOne(id),
-    };
+  findOne(@Param('id') id: string) {
+    return this.userService.findOne(+id);
   }
 
-  @Post()
-  @HttpCode(HttpStatus.CREATED)
-  @ApiOperation({ summary: '创建新用户' })
-  @ApiResponse({ status: 201, description: '创建成功' })
-  @ApiResponse({ status: 500, description: '创建失败' })
-  async create(@Body() user: User) {
-    await this.userService.create(user);
-    return {
-      statusCode: HttpStatus.CREATED,
-      message: 'User created successfully.',
-    };
-  }
-
-  @Put(':id')
-  @ApiOperation({ summary: '更新用户信息' })
+  @Patch(':id')
+  @ApiOperation({ summary: '更新用户' })
   @ApiResponse({ status: 200, description: '更新成功' })
   @ApiResponse({ status: 500, description: '更新失败' })
-  async update(@Param('id') id: number, @Body() user: User) {
-    await this.userService.update(id, user);
-    return {
-      statusCode: HttpStatus.OK,
-      message: `User with id ${id} updated successfully.`,
-    };
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+    return this.userService.update(+id, updateUserDto);
   }
 
   @Delete(':id')
-  @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({ summary: '删除用户' })
-  @ApiResponse({ status: 204, description: '删除成功' })
+  @ApiResponse({ status: 200, description: '删除成功' })
   @ApiResponse({ status: 500, description: '删除失败' })
-  async delete(@Param('id') id: number) {
-    await this.userService.delete(id);
-    return {
-      statusCode: HttpStatus.NO_CONTENT,
-      message: `User with id ${id} deleted successfully.`,
-    };
+  remove(@Param('id') id: string) {
+    return this.userService.remove(+id);
   }
 }

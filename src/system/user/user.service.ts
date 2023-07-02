@@ -1,51 +1,47 @@
 import { Injectable } from '@nestjs/common';
-import { plainToClass } from 'class-transformer';
-import * as Mock from 'mockjs';
-import { User } from './user.entity';
-
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { sql } from '@vercel/postgres';
 @Injectable()
 export class UserService {
-  private readonly users: User[] = [];
-
-  constructor() {
-    for (let i = 0; i < 10; i++) {
-      const mockedUser = Mock.mock({
-        id: i,
-        name: '@name',
-        email: '@email',
-      });
-      const user = plainToClass(User, mockedUser);
-      this.users.push(user);
-    }
+  async create(createUserDto: CreateUserDto) {
+    // 将 createUserDto 转换为适合插入数据库的格式
+    const { firstName, lastName, email, department, status } = createUserDto;
+    const insert: any = sql`
+    INSERT INTO users (FIRST_NAME, LAST_NAME, EMAIL, DEPARTMENT,STATUS) 
+    VALUES (${firstName}, ${lastName}, ${email},  ${department},  ${status})`;
+    await insert;
+    // await insert('users', values);
+    return createUserDto;
   }
 
-  findAll() {
-    return this.users;
+  async findAll() {
+    // 调用数据库查询方法
+    // const users = await findAll('users', '1 = 1');
+    const { rows } = await sql`SELECT * FROM users WHERE 1 = 1`;
+
+    return rows;
   }
 
-  findOne(id: number) {
-    return Mock.mock({
-      id: id,
-      name: '@name',
-      email: '@email',
-    });
+  async findOne(id: number) {
+    // 调用数据库查询方法
+    const { rows } = await sql`SELECT * FROM users WHERE id=${id}`;
+    return rows[0] || '没有找到用户';
   }
 
-  create(user: User) {
-    this.users.push(user);
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    // 将 updateUserDto 转换为适合更新数据库的格式
+    const { firstName, lastName, email, department, status } = updateUserDto;
+    // 调用数据库更新方法
+    await sql`UPDATE users SET FIRST_NAME = ${firstName}, LAST_NAME = ${lastName}, EMAIL = ${email}, DEPARTMENT = ${department}, STATUS = ${status} WHERE id = ${id}`;
+    const { rows } = await sql`SELECT * FROM users WHERE id=${id}`;
+    return rows;
   }
 
-  update(id: number, user: User) {
-    const index = this.users.findIndex((user) => user.id === id);
-    if (index > -1) {
-      this.users[index] = user;
-    }
-  }
+  async remove(id: number) {
+    // 调用数据库删除方法
+    await sql`DELETE FROM users WHERE id = ${id}`;
 
-  delete(id: number) {
-    const index = this.users.findIndex((user) => user.id === id);
-    if (index > -1) {
-      this.users.splice(index, 1);
-    }
+    return '这个操作删除用户 #' + id;
   }
 }

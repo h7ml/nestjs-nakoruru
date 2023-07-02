@@ -9,6 +9,7 @@ specifiers:
   '@nestjs/common': ^10.0.4
   '@nestjs/config': ^3.0.0
   '@nestjs/core': ^10.0.4
+  '@nestjs/mapped-types': ^2.0.2
   '@nestjs/platform-fastify': ^10.0.4
   '@nestjs/schematics': ^10.0.1
   '@nestjs/serve-static': ^4.0.0
@@ -75,6 +76,7 @@ dependencies:
   '@nestjs/common': 10.0.4_ulpd7zfsktznwjos6kdhkkk6gi
   '@nestjs/config': 3.0.0_@nestjs+common@10.0.4
   '@nestjs/core': 10.0.4_7nofugwljepecdboqdk2zsbeem
+  '@nestjs/mapped-types': 2.0.2_nzkrwkensdrwuymxvez64qt264
   '@nestjs/platform-fastify': 10.0.4_bsj45uvgqsbahamx7uoiqz64ia
   '@nestjs/serve-static': 4.0.0_ndxshtes6sjhzang2sj5wipxcu
   '@nestjs/swagger': 7.0.12_c45x4lwwvtl7ullnvlkmj55stq
