@@ -24,7 +24,7 @@ export const generateDocument = (app) => {
   const writeswagger = process.env.WRITE_SWAGGER;
   const document = SwaggerModule.createDocument(app, options);
   if (writeswagger) {
-    writeFileSync(swaggerPath, JSON.stringify(document, null, 2));
+    // writeFileSync(swaggerPath, JSON.stringify(document, null, 2));
     console.log(`write swagger.json to ${swaggerPath}`);
   }
   SwaggerModule.setup('/', app, document, {
