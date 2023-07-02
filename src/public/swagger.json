@@ -1,23 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/api/system/users": {
-      "get": {
-        "operationId": "UserController_findAll",
-        "summary": "获取所有用户",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "获取成功"
-          },
-          "500": {
-            "description": "获取失败"
-          }
-        },
-        "tags": [
-          "system"
-        ]
-      },
+    "/api/system/user": {
       "post": {
         "operationId": "UserController_create",
         "summary": "创建新用户",
@@ -27,7 +11,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/CreateUserDto"
               }
             }
           }
@@ -43,9 +27,25 @@
         "tags": [
           "system"
         ]
+      },
+      "get": {
+        "operationId": "UserController_findAll",
+        "summary": "获取所有用户",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
       }
     },
-    "/api/system/users/{id}": {
+    "/api/system/user/{id}": {
       "get": {
         "operationId": "UserController_findOne",
         "summary": "获取单个用户",
@@ -55,7 +55,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],
@@ -71,16 +71,16 @@
           "system"
         ]
       },
-      "put": {
+      "patch": {
         "operationId": "UserController_update",
-        "summary": "更新用户信息",
+        "summary": "更新用户",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],
@@ -89,7 +89,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UpdateUserDto"
               }
             }
           }
@@ -107,7 +107,7 @@
         ]
       },
       "delete": {
-        "operationId": "UserController_delete",
+        "operationId": "UserController_remove",
         "summary": "删除用户",
         "parameters": [
           {
@@ -115,12 +115,12 @@
             "required": true,
             "in": "path",
             "schema": {
-              "type": "number"
+              "type": "string"
             }
           }
         ],
         "responses": {
-          "204": {
+          "200": {
             "description": "删除成功"
           },
           "500": {
@@ -959,9 +959,79 @@
   "servers": [],
   "components": {
     "schemas": {
-      "User": {
+      "CreateUserDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "John",
+            "description": "名字"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Doe",
+            "description": "姓"
+          },
+          "email": {
+            "type": "string",
+            "example": "john.doe@example.com",
+            "description": "电子邮件地址"
+          },
+          "department": {
+            "type": "string",
+            "example": "IT",
+            "description": "部门"
+          },
+          "status": {
+            "type": "string",
+            "example": "Active",
+            "description": "状态"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "department",
+          "status"
+        ]
+      },
+      "UpdateUserDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "John",
+            "description": "名字"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Doe",
+            "description": "姓"
+          },
+          "email": {
+            "type": "string",
+            "example": "john.doe@example.com",
+            "description": "电子邮件地址"
+          },
+          "department": {
+            "type": "string",
+            "example": "IT",
+            "description": "部门"
+          },
+          "status": {
+            "type": "string",
+            "example": "Active",
+            "description": "状态"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "department",
+          "status"
+        ]
       },
       "Menu": {
         "type": "object",
