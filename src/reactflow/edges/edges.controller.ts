@@ -3,7 +3,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Edge } from './edge.interface';
 import { EdgesService } from './edges.service';
 
-@ApiTags('react flow ')
+@ApiTags('react flow')
 @Controller('react-flow/edges')
 export class EdgesController {
   constructor(private readonly edgesService: EdgesService) {}

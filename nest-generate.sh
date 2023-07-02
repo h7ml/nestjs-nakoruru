@@ -11,10 +11,6 @@ fi
 for name in "$@"
 do
   echo "正在生成：$name"
-
-  nest generate module $name
-  nest generate controller $name --no-spec
-  nest generate service $name --no-spec
-  nest generate entity $name --no-spec
+  yes | nest generate resource $name --no-spec > /dev/null
   echo "生成完成：$name"
 done

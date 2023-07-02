@@ -21,7 +21,6 @@ import { WeiboModule } from './hotapi/weibo/weibo.module';
 import { NewsqqModule } from './hotapi/newsqq/newsqq.module';
 import { ToutiaoModule } from './hotapi/toutiao/toutiao.module';
 import { SspaiModule } from './hotapi/sspai/sspai.module';
-import { ReactFlowModule } from './react-flow/react-flow.module';
 // import { LogsConfigModule } from './common/logs-config/logs-config.module';;
 // import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
 // import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
@@ -29,6 +28,7 @@ import { getConfig } from './config/configuration';
 import { SwaggerModule } from './swagger/swagger.module';
 import { GithubModule } from './github/github.module';
 import { WriteFileModule } from './write-file/write-file.module';
+import { ReactflowModule } from './reactflow/reactflow.module';
 
 const environment = process.env.RUNNING_ENV === 'dev';
 const rootpath = environment
@@ -64,10 +64,10 @@ const rootpath = environment
     V2exModule,
     DoubanModule,
     HupuModule,
-    ReactFlowModule,
     SwaggerModule,
     GithubModule,
     WriteFileModule,
+    ReactflowModule,
   ],
   controllers: [],
   // providers: environment

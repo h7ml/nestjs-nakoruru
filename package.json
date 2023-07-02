@@ -24,7 +24,7 @@
     "start:dev": "cross-env RUNNING_ENV=dev  WRITE_SWAGGER=true  nest start --watch",
     "dev": "cross-env RUNNING_ENV=dev WRITE_SWAGGER=true nest start --watch",
     "start:debug": "cross-env RUNNING_ENV=dev  WRITE_SWAGGER=true  nest start --debug --watch",
-    "start:prod": "cross-env RUNNING_ENV=prod  node dist/main",
+    "start:prod": "cross-env RUNNING_ENV=prod WRITE_SWAGGER=true nest build && node dist/main",
     "lint": "eslint .",
     "test": "jest",
     "test:watch": "jest --watch",

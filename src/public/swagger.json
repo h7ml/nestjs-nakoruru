@@ -1,0 +1,1018 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/system/users": {
+      "get": {
+        "operationId": "UserController_findAll",
+        "summary": "获取所有用户",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "post": {
+        "operationId": "UserController_create",
+        "summary": "创建新用户",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "创建成功"
+          },
+          "500": {
+            "description": "创建失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/system/users/{id}": {
+      "get": {
+        "operationId": "UserController_findOne",
+        "summary": "获取单个用户",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "put": {
+        "operationId": "UserController_update",
+        "summary": "更新用户信息",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "更新成功"
+          },
+          "500": {
+            "description": "更新失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "delete": {
+        "operationId": "UserController_delete",
+        "summary": "删除用户",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "删除成功"
+          },
+          "500": {
+            "description": "删除失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/system/menu": {
+      "get": {
+        "operationId": "MenuController_findAll",
+        "summary": "获取所有菜单",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "post": {
+        "operationId": "MenuController_create",
+        "summary": "创建新菜单",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Menu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "创建成功"
+          },
+          "500": {
+            "description": "创建失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/system/menu/{id}": {
+      "get": {
+        "operationId": "MenuController_findOne",
+        "summary": "获取单个菜单",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "put": {
+        "operationId": "MenuController_update",
+        "summary": "更新菜单",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Menu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "更新成功"
+          },
+          "500": {
+            "description": "更新失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "delete": {
+        "operationId": "MenuController_delete",
+        "summary": "删除菜单",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "删除成功"
+          },
+          "500": {
+            "description": "删除失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/hotapi/juejin": {
+      "get": {
+        "operationId": "JuejinController_getJuejin",
+        "summary": "获取稀土掘金热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取稀土掘金热榜成功"
+          },
+          "500": {
+            "description": "获取稀土掘金热榜失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/juejin/new": {
+      "get": {
+        "operationId": "JuejinController_getNewJuejin",
+        "summary": "获取最新稀土掘金热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取最新稀土掘金热榜成功"
+          },
+          "500": {
+            "description": "获取最新稀土掘金热榜失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/36kr": {
+      "get": {
+        "operationId": "KrController_getKr",
+        "summary": "获取36氪热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取36氪热榜成功"
+          },
+          "500": {
+            "description": "获取36氪热榜失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/36kr/new": {
+      "get": {
+        "operationId": "KrController_getNewKr",
+        "summary": "获取最新36氪热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取最新36氪热榜成功"
+          },
+          "500": {
+            "description": "获取最新36氪热榜失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/baidu": {
+      "get": {
+        "operationId": "BaiduController_getBaidu",
+        "summary": "获取百度热搜榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取百度热搜榜"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/baidu/new": {
+      "get": {
+        "operationId": "BaiduController_getNewBaidu",
+        "summary": "获取百度热搜榜的最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取百度热搜榜的最新数据"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/baidu/hot": {
+      "get": {
+        "operationId": "HotController_getHotNews",
+        "summary": "百度开发者热搜",
+        "parameters": [
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "pageNum",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取百度开发者热搜成功"
+          },
+          "500": {
+            "description": "获取百度开发者热搜失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/baidu/github": {
+      "get": {
+        "operationId": "GithubController_getGithubData",
+        "summary": "百度开发者github",
+        "parameters": [
+          {
+            "name": "optionLanguage",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "语言不限",
+                "Python",
+                "C",
+                "Java",
+                "C++",
+                "C#",
+                "JavaScript",
+                "PHP",
+                "Go",
+                "Swift",
+                "Ruby",
+                "Visual Basic",
+                "Assembly",
+                "SQL",
+                "Pascal",
+                "R",
+                "Objective-C",
+                "Perl",
+                "Lua",
+                "MATLAB",
+                "Kotlin",
+                "Rust",
+                "SAS",
+                "Fortran",
+                "COBOL",
+                "Ada",
+                "Prolog",
+                "PowerShell",
+                "Julia",
+                "Dart",
+                "Vue"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "optionSince",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "DAILY",
+                "MONTHLY",
+                "WEEKLY"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取百度开发者github成功"
+          },
+          "500": {
+            "description": "获取百度开发者github失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/bilibili": {
+      "get": {
+        "operationId": "BilibiliController_getBilibili",
+        "summary": "获取哔哩哔哩热门榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/zhihu": {
+      "get": {
+        "operationId": "ZhihuController_getZhihuHot",
+        "summary": "获取知乎热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/zhihu/new": {
+      "get": {
+        "operationId": "ZhihuController_getZhihuHotNew",
+        "summary": "获取最新的知乎热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/tieba": {
+      "get": {
+        "operationId": "TiebaController_getTieba",
+        "summary": "获取贴吧热议榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/tieba/new": {
+      "get": {
+        "operationId": "TiebaController_getNewTieba",
+        "summary": "获取最新的贴吧热议榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/thepaper": {
+      "get": {
+        "operationId": "ThePaperController_getThePaper",
+        "summary": "获取澎湃热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/thepaper/new": {
+      "get": {
+        "operationId": "ThePaperController_getNewThePaper",
+        "summary": "获取澎湃热榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/weibo": {
+      "get": {
+        "operationId": "WeiboController_getWeibo",
+        "summary": "获取微博热搜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/weibo/new": {
+      "get": {
+        "operationId": "WeiboController_getNewWeibo",
+        "summary": "获取微博热搜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/newsqq": {
+      "get": {
+        "operationId": "NewsqqController_getNewsqq",
+        "summary": "获取腾讯热点榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/newsqq/new": {
+      "get": {
+        "operationId": "NewsqqController_getNewNewsqq",
+        "summary": "获取腾讯热点榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/toutiao": {
+      "get": {
+        "operationId": "ToutiaoController_getToutiao",
+        "summary": "获取头条热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/toutiao/new": {
+      "get": {
+        "operationId": "ToutiaoController_getNewToutiao",
+        "summary": "获取头条热榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/sspai": {
+      "get": {
+        "operationId": "SspaiController_getSspai",
+        "summary": "获取少数派热榜",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/sspai/new": {
+      "get": {
+        "operationId": "SspaiController_getNewSspai",
+        "summary": "获取少数派热榜 - 最新数据",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/v2ex": {
+      "get": {
+        "operationId": "V2exController_getV2EX",
+        "summary": "获取 V2EX 热门话题",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/douban": {
+      "get": {
+        "operationId": "DoubanController_getDouban",
+        "summary": "获取豆瓣热门话题",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Douban"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/hotapi/hupu": {
+      "get": {
+        "operationId": "HupuController_getHuPu",
+        "summary": "获取虎扑热门话题",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取成功"
+          },
+          "500": {
+            "description": "获取失败"
+          }
+        },
+        "tags": [
+          "hotapi"
+        ]
+      }
+    },
+    "/api/reactflow": {
+      "post": {
+        "operationId": "ReactflowController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactflowDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      },
+      "get": {
+        "operationId": "ReactflowController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      }
+    },
+    "/api/reactflow/{id}": {
+      "get": {
+        "operationId": "ReactflowController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      },
+      "patch": {
+        "operationId": "ReactflowController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReactflowDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      },
+      "delete": {
+        "operationId": "ReactflowController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      }
+    },
+    "/api/react-flow/nodes": {
+      "get": {
+        "operationId": "NodesController_getNodes",
+        "summary": "Get react flow nodes",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Get react flow nodes successfully"
+          },
+          "500": {
+            "description": "Failed to get react flow nodes"
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      }
+    },
+    "/api/react-flow/edges": {
+      "get": {
+        "operationId": "EdgesController_getEdges",
+        "summary": "react flow edges",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "获取react flow edges成功"
+          },
+          "500": {
+            "description": "获取react flow edges失败"
+          }
+        },
+        "tags": [
+          "react flow"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Nakoruru Backend API",
+    "description": "The Nakoruru Backend API description by h7ml",
+    "version": "0.0.1",
+    "contact": {
+      "name": "Contact Name",
+      "url": "http://github.com/h7ml",
+      "email": "h7ml@qq.com"
+    },
+    "termsOfService": "https://nestjs.h7ml.cn/",
+    "license": {
+      "name": "Apache-2.0",
+      "url": "https://github.com/h7ml/nestjs-nakoruru/blob/master/license"
+    }
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {}
+      },
+      "Menu": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "number"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/Menu"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "path"
+        ]
+      },
+      "Douban": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateReactflowDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdateReactflowDto": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Nakoruru",
+    "url": "https://nestjs.h7ml.cn/"
+  }
+}
