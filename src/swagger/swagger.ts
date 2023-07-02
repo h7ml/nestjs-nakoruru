@@ -1,11 +1,12 @@
-import {
-  SwaggerModule,
-  DocumentBuilder,
-  SwaggerCustomOptions,
-} from '@nestjs/swagger';
-import { join, relative } from 'path';
-import { getEnv } from '../config/configuration';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { join } from 'path';
 import { writeFileSync } from 'fs';
+import * as dotenv from 'dotenv';
+dotenv.config();
+const environment = process.env.RUNNING_ENV === 'dev';
+const swaggerPath = environment
+  ? join(__dirname, '../../src/', 'public', 'swagger.json')
+  : join(__dirname, '../', 'public', 'swagger.json');
 
 export const generateDocument = (app) => {
   const options = new DocumentBuilder()
@@ -20,16 +21,12 @@ export const generateDocument = (app) => {
     )
     .setExternalDoc('Find out more about Nakoruru', 'https://nestjs.h7ml.cn/')
     .build();
-  // const environment = process.env.RUNNING_ENV === 'dev';
+  const writeswagger = process.env.WRITE_SWAGGER;
   const document = SwaggerModule.createDocument(app, options);
-  // if (environment) {
-  //   console.log(
-  //     `this is ${getEnv()} environment SwaggerModule.createDocument `,
-  //   );
-  //   const filePath = join(__dirname, '../', 'public', 'swagger.json');
-  //   writeFileSync(filePath, JSON.stringify(document, null, 2));
-  //   console.log(`write swagger.json to ${filePath}`);
-  // }
+  if (writeswagger) {
+    writeFileSync(swaggerPath, JSON.stringify(document, null, 2));
+    console.log(`write swagger.json to ${swaggerPath}`);
+  }
   SwaggerModule.setup('/', app, document, {
     customfavIcon: 'https://nakoruru.h7ml.cn/proxy/www.h7ml.cn/logo.png',
     customJs: [
