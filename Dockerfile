@@ -16,7 +16,7 @@ RUN pnpm install
 
 COPY --chown=node:node . /home/node
 
-RUN npm run start:prod 
+RUN npm run build 
 
 # ---
 

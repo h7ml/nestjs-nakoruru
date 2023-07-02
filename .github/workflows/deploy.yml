@@ -50,7 +50,7 @@ jobs:
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: |
-          pnpm run start:prod
+          pnpm run build
 
       - name: Deploy to Vercel 🚀
         run: npx vercel --token ${VERCEL_TOKEN} --prod

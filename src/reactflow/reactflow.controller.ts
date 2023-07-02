@@ -29,7 +29,7 @@ export class ReactflowController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.reactflowService.findOne(+id);
+    return this.reactflowService.findOne(id);
   }
 
   @Patch(':id')
