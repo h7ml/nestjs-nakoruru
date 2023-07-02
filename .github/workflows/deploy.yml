@@ -5,7 +5,24 @@ on:
   push:
     branches:
       - master
-
+env:
+  DB_TYPE: ${{ secrets.DB_TYPE }}
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_USERNAME: ${{ secrets.DB_USERNAME }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_DATABASE: ${{ secrets.DB_DATABASE }}
+  DB_RETRY_DELAY: ${{ secrets.DB_RETRY_DELAY }}
+  DB_RETRY_ATTEMPTS: ${{ secrets.DB_RETRY_ATTEMPTS }}
+  WRITE_SWAGGER: ${{ secrets.WRITE_SWAGGER }}
+  RUNNING_ENV: ${{ secrets.RUNNING_ENV }}
+  POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+  POSTGRES_PRISMA_URL: ${{ secrets.POSTGRES_PRISMA_URL }}
+  POSTGRES_URL_NON_POOLING: ${{ secrets.POSTGRES_URL_NON_POOLING }}
+  POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+  POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+  POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+  POSTGRES_DATABASE: ${{ secrets.POSTGRES_DATABASE }}
 permissions:
   contents: read
   pages: write
