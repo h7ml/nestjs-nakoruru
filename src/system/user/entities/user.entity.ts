@@ -17,6 +17,6 @@ export class User {
   @Column({ length: 300 })
   department: string;
 
-  @Column({ length: 300 })
+  @Column({ length: 300, nullable: true })
   status: string;
 }

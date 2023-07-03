@@ -6,11 +6,14 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { PaginatedUserDto } from './dto/paginated-user.dto';
+import { QueryUserDto } from './dto/query-user.dto';
+import { ApiTags, ApiOperation, ApiResponse, ApiQuery } from '@nestjs/swagger';
 
 @ApiTags('system')
 @Controller('system/user')
@@ -27,10 +30,13 @@ export class UserController {
 
   @Get()
   @ApiOperation({ summary: '获取所有用户' })
-  @ApiResponse({ status: 200, description: '获取成功' })
+  @ApiQuery({ name: 'page', type: Number, example: 1, required: false })
+  @ApiQuery({ name: 'limit', type: Number, example: 50, required: false })
+  @ApiResponse({ status: 200, description: '获取成功', type: PaginatedUserDto })
   @ApiResponse({ status: 500, description: '获取失败' })
-  findAll() {
-    return this.userService.findAll();
+  findAll(@Query() queryUserDto?: QueryUserDto): Promise<PaginatedUserDto> {
+    const { page, limit } = queryUserDto || {}; // Default values if queryUserDto is undefined
+    return this.userService.findAll(page || 1, limit || 50);
   }
 
   @Get(':id')
