@@ -966,6 +966,162 @@
           "react flow"
         ]
       }
+    },
+    "/api/system/database": {
+      "post": {
+        "operationId": "DatabaseController_create",
+        "summary": "创建新数据库",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDatabaseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "数据库创建成功"
+          },
+          "500": {
+            "description": "数据库创建失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/system/database/by-table/{tableName}": {
+      "get": {
+        "operationId": "DatabaseController_getDatabaseByTable",
+        "summary": "根据表名获取数据库信息",
+        "parameters": [
+          {
+            "name": "tableName",
+            "required": true,
+            "in": "path",
+            "description": "要查询的表名",
+            "example": "users1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rows",
+            "required": false,
+            "in": "path",
+            "description": "要选择的列，逗号分隔",
+            "example": "id,name,email",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "path",
+            "description": "页码",
+            "example": 1,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "path",
+            "description": "每页数据条数",
+            "example": 10,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功获取数据库信息",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Database"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "未找到数据库信息"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/system/database/{id}": {
+      "patch": {
+        "operationId": "DatabaseController_update",
+        "summary": "更新数据库信息",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDatabaseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功更新数据库信息"
+          },
+          "404": {
+            "description": "未找到数据库信息"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      },
+      "delete": {
+        "operationId": "DatabaseController_remove",
+        "summary": "删除数据库",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "成功删除数据库"
+          },
+          "404": {
+            "description": "未找到数据库信息"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
     }
   },
   "info": {
@@ -1153,6 +1309,18 @@
         "properties": {}
       },
       "UpdateReactflowDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateDatabaseDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "Database": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdateDatabaseDto": {
         "type": "object",
         "properties": {}
       }
