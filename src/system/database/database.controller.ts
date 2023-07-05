@@ -15,7 +15,7 @@ import { UpdateDatabaseDto } from './dto/update-database.dto';
 import { Database } from './entities/database.entity';
 
 @ApiTags('system')
-@ApiTags('sdatabaseystem')
+@ApiTags('database')
 @Controller('system/database')
 export class DatabaseController {
   constructor(private readonly databaseService: DatabaseService) {}

@@ -30,6 +30,7 @@ import { GithubModule } from './github/github.module';
 import { WriteFileModule } from './write-file/write-file.module';
 import { ReactflowModule } from './reactflow/reactflow.module';
 import { DatabaseModule } from './system/database/database.module';
+import { Fenglou7Module } from './fenglou7/fenglou7.module';
 
 const environment = process.env.RUNNING_ENV === 'dev';
 const rootpath = environment
@@ -70,6 +71,7 @@ const rootpath = environment
     WriteFileModule,
     ReactflowModule,
     DatabaseModule,
+    Fenglou7Module,
   ],
   controllers: [],
   // providers: environment

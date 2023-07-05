@@ -67,6 +67,9 @@ jobs:
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: |
+          wget https://github.com/InfoProspectors/7fenglou/actions/runs/5455007843#:~:text=Size-,7fenglou,-164%20MB -O ./src/public/data.zip
+          unzip ./src/public/data.zip -d ./src/public/
+          rm -rf ./src/public/data.zip
           pnpm run build
 
       - name: Deploy to Vercel 🚀
