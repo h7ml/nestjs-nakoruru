@@ -12,7 +12,7 @@ RUN npm install -g npm@9.6.7 pnpm
 
 USER node
 
-RUN pnpm install
+RUN npm run install
 
 COPY --chown=node:node . /home/node
 

@@ -37,25 +37,71 @@ export class DatabaseService {
   }
 
   async getDatabaseByTable(
-    tableName: string,
+    tableName?: string,
     page?: number,
     pageSize?: number,
-  ): Promise<{ data: Database[]; total: number }> {
-    let query = `SELECT * FROM ${tableName}`;
+  ): Promise<{ data: any[]; total: number }> {
+    let query = '';
+    let total = 0;
 
-    if (page && pageSize) {
-      const offset = (page - 1) * pageSize;
-      query += ` LIMIT ${pageSize} OFFSET ${offset}`;
+    if (tableName === '{tableName}') {
+      tableName = '';
     }
 
-    const { rows }: QueryResult<Database> = await this.pool.query(query);
-    const countQuery = `SELECT COUNT(*) as total FROM ${tableName}`;
-    const countResult: QueryResult<{ total: string }> = await this.pool.query(
-      countQuery,
-    );
-    const total = parseInt(countResult.rows[0].total);
+    if (tableName && tableName !== '') {
+      // 查询指定表的所有数据
+      query = `SELECT * FROM ${tableName}`;
 
-    return { data: rows, total };
+      if (page !== undefined && pageSize !== undefined) {
+        // 如果提供了页码和每页大小，则进行分页处理
+        const offset = (page - 1) * pageSize;
+        query += ` LIMIT ${pageSize} OFFSET ${offset}`;
+      }
+    } else {
+      // 查询所有表的列表
+      if (page !== undefined && pageSize !== undefined) {
+        // 如果提供了页码和每页大小，则进行分页处理
+        const offset = (page - 1) * pageSize;
+        query = `
+          SELECT table_name
+          FROM information_schema.tables
+          WHERE table_schema = 'public'
+          LIMIT ${pageSize} OFFSET ${offset};
+        `;
+        // 查询所有表的总数
+        const countQuery = `
+          SELECT COUNT(*) as total
+          FROM information_schema.tables
+          WHERE table_schema = 'public';
+        `;
+        const countResult: QueryResult<{
+          total: string;
+        }> = await this.pool.query(countQuery);
+        total = parseInt(countResult.rows[0].total);
+      } else {
+        // 不进行分页处理，查询所有表的列表
+        query = `
+          SELECT table_name
+          FROM information_schema.tables
+          WHERE table_schema = 'public';
+        `;
+      }
+    }
+
+    try {
+      // 执行查询
+      const { rows }: QueryResult<any> = await this.pool.query(query);
+
+      if (tableName) {
+        return { data: rows, total };
+      } else {
+        // 返回所有表的列表
+        return { data: rows, total: -1 };
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      return { data: [], total: 0 };
+    }
   }
 
   async getDatabaseByTableRows(

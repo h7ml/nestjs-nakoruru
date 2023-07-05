@@ -34,6 +34,7 @@ export class DatabaseController {
     name: 'tableName',
     description: '要查询的表名',
     example: 'users1',
+    required: false,
   })
   @ApiParam({
     name: 'rows',
@@ -60,7 +61,7 @@ export class DatabaseController {
   })
   @ApiResponse({ status: 404, description: '未找到数据库信息' })
   async getDatabaseByTable(
-    @Param('tableName') tableName: string,
+    @Param('tableName') tableName?: string,
     @Query('rows') rows?: string,
     @Query('page') page?: number,
     @Query('pageSize') pageSize?: number,

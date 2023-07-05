@@ -1002,7 +1002,7 @@
         "parameters": [
           {
             "name": "tableName",
-            "required": true,
+            "required": false,
             "in": "path",
             "description": "要查询的表名",
             "example": "users1",
@@ -1120,6 +1120,47 @@
         },
         "tags": [
           "system"
+        ]
+      }
+    },
+    "/api/fenglou7": {
+      "get": {
+        "operationId": "Fenglou7Controller_findAll",
+        "parameters": [
+          {
+            "name": "page",
+            "required": true,
+            "in": "query",
+            "description": "页码",
+            "example": "1",
+            "schema": {}
+          },
+          {
+            "name": "perPage",
+            "required": false,
+            "in": "query",
+            "description": "每页显示的记录数",
+            "example": "10",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功获取信息",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fenglou7"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "未找到信息"
+          }
+        },
+        "tags": [
+          "fenglou7"
         ]
       }
     }
@@ -1321,6 +1362,10 @@
         "properties": {}
       },
       "UpdateDatabaseDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "Fenglou7": {
         "type": "object",
         "properties": {}
       }
