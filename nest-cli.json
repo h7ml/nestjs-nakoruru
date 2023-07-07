@@ -6,6 +6,10 @@
     "deleteOutDir": true,
     "assets": [
       {
+        "include": "./system/email/template/*.ejs",
+        "outDir": "./dist"
+      },
+      {
         "include": "./config/*.yaml",
         "outDir": "./dist"
       },
