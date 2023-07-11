@@ -1,7 +1,7 @@
-import { Controller, Get, Header, Res } from '@nestjs/common';
+import { Controller, Get, Res } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import * as svgCaptcha from 'svg-captcha';
-
+import { Response } from 'express';
 @Controller('system/captcha')
 @ApiTags('system')
 export class CaptchaController {
@@ -9,9 +9,8 @@ export class CaptchaController {
   @ApiOperation({ summary: '获取验证码' })
   @ApiResponse({ status: 200, description: '验证码获取成功' })
   @ApiResponse({ status: 500, description: '验证码获取失败' })
-  getCaptcha(@Res() res: any): void {
+  getCaptcha(@Res() res: Response): void {
     const captcha: any = svgCaptcha.create({ background: 'rgba(0,0,0,0)' }); // 设置透明背景以便于转换为 PNG
-
     res.type('svg');
     res.header('Captcha-Text', captcha.text);
     res.send(captcha.data);
