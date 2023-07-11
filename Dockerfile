@@ -1,4 +1,4 @@
-FROM node:18.16.1-alpine as builder
+FROM node:18.16.1 as builder
 
 ENV NODE_ENV build
 
@@ -21,7 +21,7 @@ RUN pnpm run build
 
 # ---
 
-FROM node:18.16.1-alpine
+FROM node:18.16.1
 
 ENV NODE_ENV production
 
@@ -31,5 +31,4 @@ WORKDIR /home/node
 COPY --from=builder /home/node/package*.json ./
 COPY --from=builder /home/node/node_modules/ ./node_modules/
 COPY --from=builder /home/node/dist/ ./dist/
-# COPY --from=builder /home/node/src/pages/ ./src/pages/
 CMD ["node", "dist/main.js"]
