@@ -1,4 +1,4 @@
-FROM node:18-alpine as builder
+FROM node:18.16.1-alpine as builder
 
 ENV NODE_ENV build
 
@@ -7,6 +7,7 @@ WORKDIR /home/node
 
 COPY package*.json ./
 COPY pnpm-lock.yaml ./
+COPY .npmrc ./
 
 RUN npm install -g npm@9.6.7 pnpm
 
@@ -20,7 +21,7 @@ RUN pnpm run build
 
 # ---
 
-FROM node:18-alpine
+FROM node:18.16.1-alpine
 
 ENV NODE_ENV production
 
