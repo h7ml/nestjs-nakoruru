@@ -32,6 +32,7 @@ import { ReactflowModule } from './reactflow/reactflow.module';
 import { DatabaseModule } from './system/database/database.module';
 import { Fenglou7Module } from './fenglou7/fenglou7.module';
 import { EmailModule } from './system/email/email.module';
+import { CaptchaModule } from './system/auth/captcha/captcha.module';
 
 const environment = process.env.RUNNING_ENV === 'dev';
 const rootpath = environment
@@ -74,6 +75,7 @@ const rootpath = environment
     DatabaseModule,
     Fenglou7Module,
     EmailModule,
+    CaptchaModule,
   ],
   controllers: [],
   // providers: environment
