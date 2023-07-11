@@ -1163,6 +1163,35 @@
           "fenglou7"
         ]
       }
+    },
+    "/api/email/sendCode": {
+      "post": {
+        "operationId": "EmailController_sendEmailCode",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/system/captcha": {
+      "get": {
+        "operationId": "CaptchaController_getCaptcha",
+        "summary": "获取验证码",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "验证码获取成功"
+          },
+          "500": {
+            "description": "验证码获取失败"
+          }
+        },
+        "tags": [
+          "system"
+        ]
+      }
     }
   },
   "info": {
