@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { fastifyMultipart } from 'fastify-multipart';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { APP_FILTER } from '@nestjs/core';
 import { join } from 'path';
@@ -33,6 +35,7 @@ import { DatabaseModule } from './system/database/database.module';
 import { Fenglou7Module } from './fenglou7/fenglou7.module';
 import { EmailModule } from './system/email/email.module';
 import { CaptchaModule } from './system/auth/captcha/captcha.module';
+import { FileModule } from './system/file/file.module';
 
 const environment = process.env.RUNNING_ENV === 'dev';
 const rootpath = environment
@@ -76,6 +79,7 @@ const rootpath = environment
     Fenglou7Module,
     EmailModule,
     CaptchaModule,
+    FileModule,
   ],
   controllers: [],
   // providers: environment
