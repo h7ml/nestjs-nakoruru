@@ -1,4 +1,6 @@
 import { NestFactory } from '@nestjs/core';
+import { fastifyMultipart } from 'fastify-multipart';
+
 import { generateDocument } from './swagger/swagger';
 import { AppModule } from './app.module';
 import { ConfigEnum } from './common/enum/config.enum';
@@ -18,6 +20,9 @@ async function bootstrap() {
   );
   // 统一响应体格式
   app.useGlobalInterceptors(new TransformInterceptor());
+
+  // 注册 fastify-multipart 插件
+  app.register(fastifyMultipart);
 
   // 接口版本化管理
   app.enableVersioning({ type: VersioningType.URI });
