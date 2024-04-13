@@ -32,12 +32,12 @@ export const generateDocument = (app) => {
     customJs: [
       'https://nakoruru.h7ml.cn/proxy/cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.1/swagger-ui-bundle.min.js',
       'https://nakoruru.h7ml.cn/proxy/cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.1/swagger-ui-standalone-preset.min.js',
-      'https://nakoruru.h7ml.cn/proxy/nestjs.h7ml.cn/static/javascript/51.js',
+      // 'https://nakoruru.h7ml.cn/proxy/nestjs.h7ml.cn/static/javascript/51.js',
       'https://sdk.51.la/event/js-sdk-event.min.js?u=K6z46J5BfIx9pBrV',
     ],
     customCssUrl: [
       'https://nakoruru.h7ml.cn/proxy/cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.1/swagger-ui.min.css',
-      'https://nakoruru.h7ml.cn/proxy/nestjs.h7ml.cn/static/css/theme-outline.css',
+      // 'https://nakoruru.h7ml.cn/proxy/nestjs.h7ml.cn/static/css/theme-outline.css',
     ],
   });
 };
