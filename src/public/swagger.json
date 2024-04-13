@@ -24,9 +24,7 @@
             "description": "创建失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "get": {
         "operationId": "UserController_findAll",
@@ -68,9 +66,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/system/user/{id}": {
@@ -95,9 +91,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "patch": {
         "operationId": "UserController_update",
@@ -130,9 +124,7 @@
             "description": "更新失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "delete": {
         "operationId": "UserController_remove",
@@ -155,9 +147,7 @@
             "description": "删除失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/system/menu": {
@@ -173,9 +163,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "post": {
         "operationId": "MenuController_create",
@@ -199,9 +187,7 @@
             "description": "创建失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/system/menu/{id}": {
@@ -226,9 +212,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "put": {
         "operationId": "MenuController_update",
@@ -261,9 +245,7 @@
             "description": "更新失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "delete": {
         "operationId": "MenuController_delete",
@@ -286,9 +268,7 @@
             "description": "删除失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/hotapi/juejin": {
@@ -304,9 +284,7 @@
             "description": "获取稀土掘金热榜失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/juejin/new": {
@@ -322,9 +300,7 @@
             "description": "获取最新稀土掘金热榜失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/36kr": {
@@ -340,9 +316,7 @@
             "description": "获取36氪热榜失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/36kr/new": {
@@ -358,9 +332,7 @@
             "description": "获取最新36氪热榜失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/baidu": {
@@ -373,9 +345,7 @@
             "description": "获取百度热搜榜"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/baidu/new": {
@@ -388,9 +358,7 @@
             "description": "获取百度热搜榜的最新数据"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/baidu/hot": {
@@ -423,9 +391,7 @@
             "description": "获取百度开发者热搜失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/baidu/github": {
@@ -479,11 +445,7 @@
             "required": false,
             "in": "query",
             "schema": {
-              "enum": [
-                "DAILY",
-                "MONTHLY",
-                "WEEKLY"
-              ],
+              "enum": ["DAILY", "MONTHLY", "WEEKLY"],
               "type": "string"
             }
           }
@@ -496,9 +458,7 @@
             "description": "获取百度开发者github失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/bilibili": {
@@ -514,9 +474,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/zhihu": {
@@ -532,9 +490,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/zhihu/new": {
@@ -550,9 +506,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/tieba": {
@@ -568,9 +522,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/tieba/new": {
@@ -586,9 +538,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/thepaper": {
@@ -601,9 +551,7 @@
             "description": "获取成功"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/thepaper/new": {
@@ -616,9 +564,7 @@
             "description": "获取成功"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/weibo": {
@@ -631,9 +577,7 @@
             "description": "获取成功"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/weibo/new": {
@@ -646,9 +590,7 @@
             "description": "获取成功"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/newsqq": {
@@ -664,9 +606,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/newsqq/new": {
@@ -682,9 +622,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/toutiao": {
@@ -700,9 +638,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/toutiao/new": {
@@ -718,9 +654,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/sspai": {
@@ -736,9 +670,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/sspai/new": {
@@ -754,9 +686,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/v2ex": {
@@ -772,9 +702,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/douban": {
@@ -797,9 +725,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/hotapi/hupu": {
@@ -815,9 +741,7 @@
             "description": "获取失败"
           }
         },
-        "tags": [
-          "hotapi"
-        ]
+        "tags": ["hotapi"]
       }
     },
     "/api/reactflow": {
@@ -839,9 +763,7 @@
             "description": ""
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       },
       "get": {
         "operationId": "ReactflowController_findAll",
@@ -851,9 +773,7 @@
             "description": ""
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       }
     },
     "/api/reactflow/{id}": {
@@ -874,9 +794,7 @@
             "description": ""
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       },
       "patch": {
         "operationId": "ReactflowController_update",
@@ -905,9 +823,7 @@
             "description": ""
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       },
       "delete": {
         "operationId": "ReactflowController_remove",
@@ -926,9 +842,7 @@
             "description": ""
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       }
     },
     "/api/react-flow/nodes": {
@@ -944,9 +858,7 @@
             "description": "Failed to get react flow nodes"
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       }
     },
     "/api/react-flow/edges": {
@@ -962,9 +874,7 @@
             "description": "获取react flow edges失败"
           }
         },
-        "tags": [
-          "react flow"
-        ]
+        "tags": ["react flow"]
       }
     },
     "/api/system/database": {
@@ -990,9 +900,7 @@
             "description": "数据库创建失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/system/database/by-table/{tableName}": {
@@ -1056,9 +964,7 @@
             "description": "未找到数据库信息"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/system/database/{id}": {
@@ -1093,9 +999,7 @@
             "description": "未找到数据库信息"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       },
       "delete": {
         "operationId": "DatabaseController_remove",
@@ -1118,9 +1022,7 @@
             "description": "未找到数据库信息"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     },
     "/api/fenglou7": {
@@ -1159,9 +1061,7 @@
             "description": "未找到信息"
           }
         },
-        "tags": [
-          "fenglou7"
-        ]
+        "tags": ["fenglou7"]
       }
     },
     "/api/email/sendCode": {
@@ -1188,9 +1088,7 @@
             "description": "验证码获取失败"
           }
         },
-        "tags": [
-          "system"
-        ]
+        "tags": ["system"]
       }
     }
   },
@@ -1242,13 +1140,7 @@
             "description": "状态"
           }
         },
-        "required": [
-          "firstName",
-          "lastName",
-          "email",
-          "department",
-          "status"
-        ]
+        "required": ["firstName", "lastName", "email", "department", "status"]
       },
       "UserDto": {
         "type": "object",
@@ -1294,10 +1186,7 @@
             "type": "number"
           }
         },
-        "required": [
-          "data",
-          "total"
-        ]
+        "required": ["data", "total"]
       },
       "UpdateUserDto": {
         "type": "object",
@@ -1328,13 +1217,7 @@
             "description": "状态"
           }
         },
-        "required": [
-          "firstName",
-          "lastName",
-          "email",
-          "department",
-          "status"
-        ]
+        "required": ["firstName", "lastName", "email", "department", "status"]
       },
       "Menu": {
         "type": "object",
@@ -1364,11 +1247,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "title",
-          "path"
-        ]
+        "required": ["id", "title", "path"]
       },
       "Douban": {
         "type": "object",

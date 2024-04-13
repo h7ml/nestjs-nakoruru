@@ -4,6 +4,6 @@ import { Fenglou7Controller } from './fenglou7.controller';
 
 @Module({
   controllers: [Fenglou7Controller],
-  providers: [Fenglou7Service]
+  providers: [Fenglou7Service],
 })
 export class Fenglou7Module {}

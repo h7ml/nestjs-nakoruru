@@ -3,12 +3,7 @@
   "request": "launch",
   "name": "debug nest",
   "runtimeExecutable": "npm",
-  "args": [
-    "run",
-    "dev",
-  ],
-  "skipFiles": [
-    "<node_internals>/**"
-  ],
-  "console": "integratedTerminal",
+  "args": ["run", "dev"],
+  "skipFiles": ["<node_internals>/**"],
+  "console": "integratedTerminal"
 }

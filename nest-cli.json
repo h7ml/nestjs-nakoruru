@@ -5,26 +5,11 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "assets": [
-      {
-        "include": "./system/email/template/*.ejs",
-        "outDir": "./dist"
-      },
-      {
-        "include": "./config/*.yaml",
-        "outDir": "./dist"
-      },
-      {
-        "include": "./**/*.template",
-        "outDir": "./dist"
-      },
-      {
-        "include": "./**/*.md",
-        "outDir": "./dist"
-      },
-      {
-        "include": "./public/**/*",
-        "outDir": "./dist"
-      }
-    ]
+      "./system/email/template/*.ejs",
+      "./config/*.yaml",
+      "./**/*.template",
+      "./public/**/*"
+    ],
+    "watchAssets": true
   }
 }

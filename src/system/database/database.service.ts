@@ -121,9 +121,8 @@ export class DatabaseService {
 
     // 查询总记录数
     const countQuery = `SELECT COUNT(*) FROM ${table}`;
-    const countResult: QueryResult<{ count: number }> = await this.pool.query(
-      countQuery,
-    );
+    const countResult: QueryResult<{ count: number }> =
+      await this.pool.query(countQuery);
     const total = countResult.rows[0].count;
 
     // 执行分页查询

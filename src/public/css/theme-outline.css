@@ -59,7 +59,9 @@
 .swagger-ui .opblock-tag {
   font-size: 24px;
   margin: 0 0 5px;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -81,14 +83,18 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
 .swagger-ui .parаmeter__type {
   font-size: 12px;
   padding: 5px 0;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -134,7 +140,9 @@
   font-size: 12px;
   font-weight: 700;
   margin: 0;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -148,7 +156,9 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -161,7 +171,9 @@
   border-radius: 3px;
   background: #000;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #fff;
 }
 
@@ -172,7 +184,9 @@
   display: -ms-flexbox;
   display: flex;
   padding: 0 10px;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
   -webkit-box-align: center;
@@ -206,7 +220,9 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -341,7 +357,9 @@
   min-width: 90px;
   padding: 0;
   cursor: pointer;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -375,7 +393,9 @@
 .swagger-ui .opblock-title_normal h4 {
   font-size: 12px;
   margin: 0 0 5px;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -383,7 +403,9 @@
 .swagger-ui .opblock-title_normal p {
   font-size: 14px;
   margin: 0;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -427,19 +449,25 @@
 .swagger-ui .responses-inner h5 {
   font-size: 12px;
   margin: 10px 0 5px;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
 .swagger-ui .response-col_status {
   font-size: 14px;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
 .swagger-ui .response-col_status .response-undocumented {
   font-size: 11px;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #999;
 }
@@ -452,7 +480,9 @@
   padding: 10px;
   border-radius: 4px;
   background: #41444e;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #fff;
 }
@@ -468,7 +498,9 @@
   white-space: pre-wrap;
   border-radius: 4px;
   background: #41444e;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #fff;
 }
@@ -504,7 +536,9 @@
   -ms-flex-direction: column;
   flex-direction: column;
   margin: -20px 15px 0 0;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -531,7 +565,9 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-transform: uppercase;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -544,8 +580,12 @@
   height: 60px;
   margin: -30px;
   content: '';
-  -webkit-animation: rotation 1s infinite linear, opacity 0.5s;
-  animation: rotation 1s infinite linear, opacity 0.5s;
+  -webkit-animation:
+    rotation 1s infinite linear,
+    opacity 0.5s;
+  animation:
+    rotation 1s infinite linear,
+    opacity 0.5s;
   opacity: 1;
   border: 2px solid rgba(85, 85, 85, 0.1);
   border-top-color: rgba(0, 0, 0, 0.6);
@@ -590,7 +630,9 @@
   border-radius: 4px;
   background: transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -605,7 +647,9 @@
 
 .swagger-ui .btn.cancel {
   border-color: #ff6060;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #ff6060;
 }
 
@@ -745,7 +789,9 @@
     right 10px center no-repeat;
   background-size: 20px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -766,7 +812,9 @@
   font-size: 12px;
   font-weight: 700;
   margin: 0 0 5px;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -855,7 +903,9 @@
   border-radius: 4px;
   outline: none;
   background: hsla(0, 0%, 100%, 0.8);
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -872,7 +922,9 @@
   resize: none;
   border-radius: 4px;
   background: #41444e;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #fff;
 }
@@ -894,7 +946,9 @@
   font-weight: 400 !important;
   font-style: italic;
   margin: 0 !important;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -975,7 +1029,9 @@
   font-size: 12px;
   margin: 0 0 5px;
   color: #41444e;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -983,7 +1039,9 @@
   font-size: 18px;
   font-weight: 600;
   margin: 15px 0 0;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1015,14 +1073,18 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
 .swagger-ui .model {
   font-size: 12px;
   font-weight: 300;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -1037,7 +1099,9 @@
   -webkit-transition: -webkit-transform 0.15s ease-in;
   transition: -webkit-transform 0.15s ease-in;
   transition: transform 0.15s ease-in;
-  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  transition:
+    transform 0.15s ease-in,
+    -webkit-transform 0.15s ease-in;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   -webkit-transform-origin: 50% 50%;
@@ -1119,7 +1183,9 @@
   cursor: pointer;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #777;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1144,7 +1210,9 @@
 .swagger-ui section.models h5 {
   font-size: 16px;
   margin: 0 0 10px;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #777;
 }
 
@@ -1190,7 +1258,9 @@
 
 .swagger-ui .model-title {
   font-size: 16px;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #555;
 }
 
@@ -1231,7 +1301,9 @@
   font-size: 12px;
   font-weight: 300;
   vertical-align: middle;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -1253,14 +1325,18 @@
   padding: 12px 0;
   text-align: left;
   border-bottom: 1px solid rgba(59, 65, 81, 0.2);
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
 .swagger-ui .parameters-col_description p {
   font-size: 14px;
   margin: 0;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1272,7 +1348,9 @@
 .swagger-ui .parameter__name {
   font-size: 16px;
   font-weight: 400;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1292,7 +1370,9 @@
 .swagger-ui .parameter__in {
   font-size: 12px;
   font-style: italic;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #888;
 }
@@ -1327,7 +1407,9 @@
   -ms-flex: 1;
   flex: 1;
   -ms-flex-align: center;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #fff;
 }
 
@@ -1357,7 +1439,9 @@
   border: none;
   border-radius: 0 4px 4px 0;
   background: #547f00;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #fff;
 }
 
@@ -1375,7 +1459,9 @@
 
 .swagger-ui .info p {
   font-size: 14px;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1383,7 +1469,9 @@
   padding: 3px 5px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.05);
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #9012fe;
 }
@@ -1392,7 +1480,9 @@
   font-size: 14px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #4990e2;
 }
 
@@ -1408,7 +1498,9 @@
   font-size: 12px;
   font-weight: 300 !important;
   margin: 0;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -1416,7 +1508,9 @@
 .swagger-ui .info .title {
   font-size: 36px;
   margin: 0;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1434,7 +1528,9 @@
 
 .swagger-ui .info .title small pre {
   margin: 0;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #fff;
 }
 
@@ -1494,14 +1590,18 @@
   font-size: 12px;
   padding: 10px;
   border-radius: 4px;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
 
 .swagger-ui .scopes h2 {
   font-size: 14px;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1526,7 +1626,9 @@
 .swagger-ui .errors-wrapper .errors h4 {
   font-size: 14px;
   margin: 0;
-  font-family: Source Code Pro, monospace;
+  font-family:
+    Source Code Pro,
+    monospace;
   font-weight: 600;
   color: #3b4151;
 }
@@ -1546,7 +1648,9 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Titillium Web, sans-serif;
+  font-family:
+    Titillium Web,
+    sans-serif;
   color: #3b4151;
 }
 
@@ -1701,7 +1805,9 @@
   font-size: 14px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  font-family: Open Sans, sans-serif;
+  font-family:
+    Open Sans,
+    sans-serif;
   color: #0f6ab4;
 }
 
