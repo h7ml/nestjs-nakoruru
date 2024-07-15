@@ -20,7 +20,7 @@ export class BaiduController {
   private getData(data): any[] {
     if (!data) return [];
     try {
-      const pattern = /<\!--s-data:(.*?)-->/s;
+      const pattern = /<!--s-data:([\s\S]*?)-->/;
       const matchResult = data.match(pattern);
       const jsonObject = JSON.parse(matchResult[1]).cards[0].content;
       return jsonObject.map((v) => {
