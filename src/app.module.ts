@@ -36,6 +36,7 @@ import { Fenglou7Module } from './fenglou7/fenglou7.module';
 import { EmailModule } from './system/email/email.module';
 import { CaptchaModule } from './system/auth/captcha/captcha.module';
 import { FileModule } from './system/file/file.module';
+import { OpenaiModule } from './openai/openai.module';
 
 const environment = process.env.RUNNING_ENV === 'dev';
 const rootpath = environment
@@ -80,6 +81,7 @@ const rootpath = environment
     EmailModule,
     CaptchaModule,
     FileModule,
+    OpenaiModule,
   ],
   controllers: [],
   // providers: environment
